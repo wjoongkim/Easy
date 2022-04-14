@@ -3,9 +3,9 @@ import java.util.Date;
 import java.util.List;
 
 public class EmployeeManager implements IEmployeeManager{
-    List<Employee> employees;
+    ArrayList<Employee> employees;
 
-    public EmployeeManager(List<Employee> employees) {
+    public EmployeeManager(ArrayList<Employee> employees) {
         this.employees = employees;
     }
 
