@@ -1,6 +1,9 @@
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.text.ParseException;
+
 
 public class EmployeeManager implements IEmployeeManager{
     ArrayList<Employee> employees;
@@ -10,8 +13,9 @@ public class EmployeeManager implements IEmployeeManager{
     }
 
     @Override
-    public void add(String[] args) {
+    public Employee add(String args) {
 
+        return null;
     }
 
     @Override

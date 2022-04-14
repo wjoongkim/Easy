@@ -5,8 +5,10 @@ public class Phone {
     private String phoneNumMiddle;
     private String phoneNumLast;
 
-    public Phone(String phoneNum) {
+    public Phone(String phoneNum, String phoneNumMiddle, String phoneNumLast) {
         this.phoneNum = phoneNum;
+        this.phoneNumMiddle = phoneNumMiddle;
+        this.phoneNumLast = phoneNumLast;
     }
 
     @Override
