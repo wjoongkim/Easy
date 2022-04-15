@@ -35,9 +35,8 @@ public class EmployeeManager implements IEmployeeManager{
         }
 
         String joinYear = tokens[0].substring(0,2);
-        int intJintYear = Integer.parseInt(joinYear);
 
-        if(intJintYear > 25) {
+        if(Integer.parseInt(joinYear) > 25) {
             joinYear = "19" + joinYear;
         }
         else {
