@@ -88,4 +88,8 @@ public class Employee {
     public void setJoinYear(int joinYear) {
         this.joinYear = joinYear;
     }
+
+    public String getEmpInfo(String op) {
+        return op + "," + employeeNum + name.getNameFull() + "," + cl + "," + phoneNum.getPhoneNumFull() + ',' + getBirthday().getBirthday() + ',' + getCerti();
+    }
 }
