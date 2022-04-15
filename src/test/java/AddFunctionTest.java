@@ -25,22 +25,22 @@ public class AddFunctionTest {
                         , new Phone("010-3112-2609", "3112", "2609")
                         , new Birthday("19771211")
                         , "ADV"
-                        , 2015)
+                        , 2015123099)
                 );
 
         Employee employee = iEmployeeManagerMock.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
 
         assertThat(employee.getEmployeeNum()).isEqualTo("15123099");
-        assertThat(employee.getName().getNameFull()).isEqualTo("VXIHXOTH JHOP");
-        assertThat(employee.getName().getNameFirst()).isEqualTo("VXIHXOTH");
-        assertThat(employee.getName().getNameLast()).isEqualTo("JHOP");
+        assertThat(employee.getName().getFullName()).isEqualTo("VXIHXOTH JHOP");
+        assertThat(employee.getName().getFirstName()).isEqualTo("VXIHXOTH");
+        assertThat(employee.getName().getLastName()).isEqualTo("JHOP");
         assertThat(employee.getCl()).isEqualTo("CL3");
-        assertThat(employee.getPhoneNum().getPhoneNumFull()).isEqualTo("010-3112-2609");
-        assertThat(employee.getPhoneNum().getPhoneNumMiddle()).isEqualTo("3112");
-        assertThat(employee.getPhoneNum().getPhoneNumLast()).isEqualTo("2609");
+        assertThat(employee.getPhoneNum().getFullNumber()).isEqualTo("010-3112-2609");
+        assertThat(employee.getPhoneNum().getMiddleNumber()).isEqualTo("3112");
+        assertThat(employee.getPhoneNum().getLastNumber()).isEqualTo("2609");
         assertThat(employee.getBirthday().getBirthday()).isEqualTo("19771211");
         assertThat(employee.getCerti()).isEqualTo("ADV");
-        assertThat(employee.getJoinYear()).isEqualTo(2015);
+        assertThat(employee.getJoinYear()).isEqualTo(2015123099);
 
         System.out.println("성공!!! 완성!!!");
     }
@@ -52,7 +52,7 @@ public class AddFunctionTest {
         ArrayList<Employee> employees = new ArrayList<>();
         EmployeeManager employeeManager = new EmployeeManager(employees);
 
-        Employee employee = employeeManager.add("15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+        Employee employee = employeeManager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
         assertEquals(employee.getEmployeeNum(), "15123099");
     }
 
