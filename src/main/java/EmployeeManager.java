@@ -24,8 +24,9 @@ public class EmployeeManager implements IEmployeeManager{
     }
 
     @Override
-    public void search(String[] args) {
+    public ArrayList<Employee> search(String args) {
 
+        return null;
     }
 
     @Override
