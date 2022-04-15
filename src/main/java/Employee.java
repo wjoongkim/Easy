@@ -8,9 +8,9 @@ public class Employee {
     private Phone phoneNum;
     private Birthday birthday;
     private String certi;
-    private Date joinYear;
+    private int joinYear;
 
-    public Employee(String employeeNum, Name name, String cl, Phone phoneNum, Birthday birthday, String certi, Date joinYear) {
+    public Employee(String employeeNum, Name name, String cl, Phone phoneNum, Birthday birthday, String certi, int joinYear) {
         this.employeeNum = employeeNum;
         this.name = name;
         this.cl = cl;
@@ -81,11 +81,11 @@ public class Employee {
         this.certi = certi;
     }
 
-    public Date getJoinYear() {
+    public int getJoinYear() {
         return joinYear;
     }
 
-    public void setJoinYear(Date joinYear) {
+    public void setJoinYear(int joinYear) {
         this.joinYear = joinYear;
     }
 }
