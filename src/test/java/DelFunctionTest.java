@@ -20,7 +20,6 @@ public class DelFunctionTest {
 
     //mock으로 data 넣어서 삭제 테스트
     @Test
-    @Deprecated
     void del_Mock_First_Test() throws ParseException {
         Phone p1 = new Phone("010-3112-2609", "3112", "2609");
         Name n1 = new Name("VXIHXOTH JHOP", "VXIHXOTH", "JHOP");
@@ -57,7 +56,7 @@ public class DelFunctionTest {
 
     // add 함수 합쳐진 후 테스트
     @Test
-    void del_Mock_Second_Test() throws ParseException {
+    void del_Second_Test() throws ParseException {
         ArrayList<Employee> employees = new ArrayList<>();
         employeeManager = new EmployeeManager(employees);
         //Employee employee = employeeManager.add("15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
