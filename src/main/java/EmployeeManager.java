@@ -81,18 +81,17 @@ public class EmployeeManager implements IEmployeeManager {
         String condition = tokens[CONDITION];
         String keyword = tokens[KEYWORD];
 
-        ArrayList<Employee> result = new ArrayList<Employee>();
-        ;
+        ArrayList<Employee> result = new ArrayList<>();
 
         //option 2 처리
         if (!option2.equals("")) {
             if (condition.equals("name")) {
                 switch (option2) {
                     case "-f":
-                        result = employees.stream().filter(employee -> employee.getName().getNameFirst().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
+                        result = employees.stream().filter(employee -> employee.getName().getFirstName().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
                     case "-l":
-                        result = employees.stream().filter(employee -> employee.getName().getNameLast().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
+                        result = employees.stream().filter(employee -> employee.getName().getLastName().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
                     default:
                         break;
@@ -101,10 +100,10 @@ public class EmployeeManager implements IEmployeeManager {
             if (condition.equals("phone")) {
                 switch (option2) {
                     case "-m":
-                        result = employees.stream().filter(employee -> employee.getPhoneNum().getPhoneNumMiddle().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
+                        result = employees.stream().filter(employee -> employee.getPhoneNum().getMiddleNumber().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
                     case "-l":
-                        result = employees.stream().filter(employee -> employee.getPhoneNum().getPhoneNumLast().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
+                        result = employees.stream().filter(employee -> employee.getPhoneNum().getLastNumber().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
                     default:
                         break;
@@ -133,13 +132,13 @@ public class EmployeeManager implements IEmployeeManager {
                     result = employees.stream().filter(employee -> employee.getEmployeeNum().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                     break;
                 case "name":
-                    result = employees.stream().filter(employee -> employee.getName().getNameFull().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
+                    result = employees.stream().filter(employee -> employee.getName().getFullName().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                     break;
                 case "cl":
                     result = employees.stream().filter(employee -> employee.getCl().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                     break;
                 case "phoneNum":
-                    result = employees.stream().filter(employee -> employee.getPhoneNum().getPhoneNumFull().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
+                    result = employees.stream().filter(employee -> employee.getPhoneNum().getFullNumber().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                     break;
                 case "birthday":
                     result = employees.stream().filter(employee -> employee.getBirthday().getBirthday().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
