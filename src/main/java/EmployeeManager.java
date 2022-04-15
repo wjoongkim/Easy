@@ -14,8 +14,51 @@ public class EmployeeManager implements IEmployeeManager{
 
     @Override
     public Employee add(String args) {
+        String[] tokens = args.split(",");
 
-        return null;
+        String fullName = tokens[1];
+        String[] nameTokens = fullName.split(" ");
+        String firstName = nameTokens[0];
+        String lastName = nameTokens[1];
+
+        String fullPhoneNumber = tokens[3];
+        String[] phoneNumberTokens = fullPhoneNumber.split("-");
+        String middlePhoneNumber = phoneNumberTokens[1];
+        String lastPhoneNumber = phoneNumberTokens[2];
+
+        SimpleDateFormat dtBirthFormat = new SimpleDateFormat("yyyyMMdd");
+        Date dtBirth = null;
+        try {
+            dtBirth = dtBirthFormat.parse(tokens[4]);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        String joinYear = tokens[0].substring(0,2);
+        int intJintYear = Integer.parseInt(joinYear);
+
+        if(intJintYear > 25) {
+            joinYear = "19" + joinYear;
+        }
+        else {
+            joinYear = "20" + joinYear;
+        }
+
+        SimpleDateFormat dtJoinYearFormat = new SimpleDateFormat("yyyy");
+        Date dtJoinYear = null;
+        try {
+            dtJoinYear = dtJoinYearFormat.parse(joinYear);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        Employee employee = new Employee(
+                  tokens[0],new Name(fullName,firstName,lastName),tokens[2]
+                , new Phone(fullPhoneNumber,middlePhoneNumber,lastPhoneNumber)
+                , dtBirth, tokens[5],dtJoinYear);
+
+        employees.add(employee);
+        return employee;
     }
 
     @Override
