@@ -1,12 +1,12 @@
 import java.util.Objects;
 
 public class Name {
-    private String name;
+    private String nameFull;
     private String nameFirst;
     private String nameLast;
 
     public Name(String name, String nameFirst, String nameLast) {
-        this.name = name;
+        this.nameFull = name;
         this.nameFirst = nameFirst;
         this.nameLast = nameLast;
     }
@@ -16,20 +16,20 @@ public class Name {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Name name1 = (Name) o;
-        return Objects.equals(name, name1.name) && Objects.equals(nameFirst, name1.nameFirst) && Objects.equals(nameLast, name1.nameLast);
+        return Objects.equals(nameFull, name1.nameFull) && Objects.equals(nameFirst, name1.nameFirst) && Objects.equals(nameLast, name1.nameLast);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, nameFirst, nameLast);
+        return Objects.hash(nameFull, nameFirst, nameLast);
     }
 
-    public String getName() {
-        return name;
+    public String getNameFull() {
+        return nameFull;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameFull(String nameFull) {
+        this.nameFull = nameFull;
     }
 
     public String getNameFirst() {
