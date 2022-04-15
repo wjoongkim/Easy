@@ -6,11 +6,11 @@ public class Employee {
     private Name name;
     private String cl;
     private Phone phoneNum;
-    private Date birthday;
+    private Birthday birthday;
     private String certi;
     private Date joinYear;
 
-    public Employee(String employeeNum, Name name, String cl, Phone phoneNum, Date birthday, String certi, Date joinYear) {
+    public Employee(String employeeNum, Name name, String cl, Phone phoneNum, Birthday birthday, String certi, Date joinYear) {
         this.employeeNum = employeeNum;
         this.name = name;
         this.cl = cl;
@@ -65,11 +65,11 @@ public class Employee {
         this.phoneNum = phoneNum;
     }
 
-    public Date getBirthday() {
+    public Birthday getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(Birthday birthday) {
         this.birthday = birthday;
     }
 
