@@ -1,14 +1,14 @@
 import java.util.Objects;
 
 public class Phone {
-    private String phoneNumFull;
-    private String phoneNumMiddle;
-    private String phoneNumLast;
+    private String fullNumber;
+    private String middleNumber;
+    private String lastNumber;
 
     public Phone(String phoneNum, String phoneNumMiddle, String phoneNumLast) {
-        this.phoneNumFull = phoneNum;
-        this.phoneNumMiddle = phoneNumMiddle;
-        this.phoneNumLast = phoneNumLast;
+        this.fullNumber = fullNumber;
+        this.middleNumber = middleNumber;
+        this.lastNumber = lastNumber;
     }
 
     @Override
@@ -16,35 +16,35 @@ public class Phone {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Phone phone = (Phone) o;
-        return Objects.equals(phoneNumFull, phone.phoneNumFull) && Objects.equals(phoneNumMiddle, phone.phoneNumMiddle) && Objects.equals(phoneNumLast, phone.phoneNumLast);
+        return Objects.equals(fullNumber, phone.fullNumber) && Objects.equals(middleNumber, phone.middleNumber) && Objects.equals(lastNumber, phone.lastNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phoneNumFull, phoneNumMiddle, phoneNumLast);
+        return Objects.hash(fullNumber, middleNumber, lastNumber);
     }
 
-    public String getPhoneNumFull() {
-        return phoneNumFull;
+    public String getFullNumber() {
+        return fullNumber;
     }
 
-    public void setPhoneNumFull(String phoneNumFull) {
-        this.phoneNumFull = phoneNumFull;
+    public void setFullNumber(String fullNumber) {
+        this.fullNumber = fullNumber;
     }
 
-    public String getPhoneNumMiddle() {
-        return phoneNumMiddle;
+    public String getMiddleNumber() {
+        return middleNumber;
     }
 
-    public void setPhoneNumMiddle(String phoneNumMiddle) {
-        this.phoneNumMiddle = phoneNumMiddle;
+    public void setMiddleNumber(String middleNumber) {
+        this.middleNumber = middleNumber;
     }
 
-    public String getPhoneNumLast() {
-        return phoneNumLast;
+    public String getLastNumber() {
+        return lastNumber;
     }
 
-    public void setPhoneNumLast(String phoneNumLast) {
-        this.phoneNumLast = phoneNumLast;
+    public void setLastNumber(String lastNumber) {
+        this.lastNumber = lastNumber;
     }
 }
