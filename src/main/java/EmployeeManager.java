@@ -5,7 +5,7 @@ import java.util.List;
 import java.text.ParseException;
 
 
-public class EmployeeManager implements IEmployeeManager{
+public class EmployeeManager implements IEmployeeManager {
     ArrayList<Employee> employees;
 
     public EmployeeManager(ArrayList<Employee> employees) {
@@ -51,7 +51,7 @@ public class EmployeeManager implements IEmployeeManager{
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
+        return null;
         Employee employee = new Employee(
                   tokens[0],new Name(fullName,firstName,lastName),tokens[2]
                 , new Phone(fullPhoneNumber,middlePhoneNumber,lastPhoneNumber)
@@ -70,6 +70,12 @@ public class EmployeeManager implements IEmployeeManager{
     public ArrayList<Employee> search(String args) {
 
         return null;
+        //SCH,-p,-d, ,birthday,04
+        //SCH, , , ,employeeNum,79110836\
+        //SCH,-p, , ,certi,PRO
+        //SCH, , , ,certi,ADV
+
+
     }
 
     @Override
