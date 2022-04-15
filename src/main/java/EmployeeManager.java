@@ -87,10 +87,10 @@ public class EmployeeManager implements IEmployeeManager {
         if(!option2.equals("") ){
             if(condition.equals("name")){
                 switch (option2){
-                    case "f":
+                    case "-f":
                         result = employees.stream().filter(employee -> employee.getName().getNameFirst().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
-                    case "l":
+                    case "-l":
                         result =  employees.stream().filter(employee -> employee.getName().getNameLast().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
                     default:
@@ -99,10 +99,10 @@ public class EmployeeManager implements IEmployeeManager {
             }
             if(condition.equals("phone")){
                 switch (option2){
-                    case "m":
+                    case "-m":
                         result =  employees.stream().filter(employee -> employee.getPhoneNum().getPhoneNumMiddle().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
-                    case "l":
+                    case "-l":
                         result =  employees.stream().filter(employee -> employee.getPhoneNum().getPhoneNumLast().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
                     default:
@@ -111,13 +111,13 @@ public class EmployeeManager implements IEmployeeManager {
             }
             if(condition.equals("birthday")){
                 switch (option2){
-                    case "y":
+                    case "-y":
                         result =  employees.stream().filter(employee -> employee.getBirthday().getYear().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
-                    case "m":
+                    case "-m":
                         result =  employees.stream().filter(employee -> employee.getBirthday().getMonth().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
-                    case "d":
+                    case "-d":
                         result =  employees.stream().filter(employee -> employee.getBirthday().getDay().contains(keyword)).collect(Collectors.toCollection(ArrayList::new));
                         break;
                     default:
