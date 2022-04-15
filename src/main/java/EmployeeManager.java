@@ -1,9 +1,4 @@
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.text.ParseException;
-
 
 public class EmployeeManager implements IEmployeeManager {
     ArrayList<Employee> employees;
@@ -26,38 +21,22 @@ public class EmployeeManager implements IEmployeeManager {
         String middlePhoneNumber = phoneNumberTokens[1];
         String lastPhoneNumber = phoneNumberTokens[2];
 
-        SimpleDateFormat dtBirthFormat = new SimpleDateFormat("yyyyMMdd");
-        Date dtBirth = null;
-        try {
-            dtBirth = dtBirthFormat.parse(tokens[4]);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        String joinYear = tokens[0].substring(0,2);
+        String joinYear = tokens[0].substring(0, 2);
 
         final int BASE_YEAR = 25;
-        if(Integer.parseInt(joinYear) > BASE_YEAR) {
+        if (Integer.parseInt(joinYear) > BASE_YEAR) {
             joinYear = "19" + joinYear;
-        }
-        else {
+        } else {
             joinYear = "20" + joinYear;
         }
 
-        SimpleDateFormat dtJoinYearFormat = new SimpleDateFormat("yyyy");
-        Date dtJoinYear = null;
-        try {
-            dtJoinYear = dtJoinYearFormat.parse(joinYear);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return null;
         Employee employee = new Employee(
-                  tokens[0],new Name(fullName,firstName,lastName),tokens[2]
-                , new Phone(fullPhoneNumber,middlePhoneNumber,lastPhoneNumber)
-                , dtBirth, tokens[5],dtJoinYear);
+                tokens[0], new Name(fullName, firstName, lastName), tokens[2]
+                , new Phone(fullPhoneNumber, middlePhoneNumber, lastPhoneNumber)
+                , new Birthday(tokens[4]), tokens[5], Integer.parseInt(joinYear));
 
         employees.add(employee);
+
         return employee;
     }
 

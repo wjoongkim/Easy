@@ -1,12 +1,12 @@
 import java.util.Objects;
 
 public class Phone {
-    private String phoneNum;
+    private String phoneNumFull;
     private String phoneNumMiddle;
     private String phoneNumLast;
 
     public Phone(String phoneNum, String phoneNumMiddle, String phoneNumLast) {
-        this.phoneNum = phoneNum;
+        this.phoneNumFull = phoneNum;
         this.phoneNumMiddle = phoneNumMiddle;
         this.phoneNumLast = phoneNumLast;
     }
@@ -16,20 +16,20 @@ public class Phone {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Phone phone = (Phone) o;
-        return Objects.equals(phoneNum, phone.phoneNum) && Objects.equals(phoneNumMiddle, phone.phoneNumMiddle) && Objects.equals(phoneNumLast, phone.phoneNumLast);
+        return Objects.equals(phoneNumFull, phone.phoneNumFull) && Objects.equals(phoneNumMiddle, phone.phoneNumMiddle) && Objects.equals(phoneNumLast, phone.phoneNumLast);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(phoneNum, phoneNumMiddle, phoneNumLast);
+        return Objects.hash(phoneNumFull, phoneNumMiddle, phoneNumLast);
     }
 
-    public String getPhoneNum() {
-        return phoneNum;
+    public String getPhoneNumFull() {
+        return phoneNumFull;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+    public void setPhoneNumFull(String phoneNumFull) {
+        this.phoneNumFull = phoneNumFull;
     }
 
     public String getPhoneNumMiddle() {
