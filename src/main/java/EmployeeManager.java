@@ -1,5 +1,6 @@
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.text.ParseException;
@@ -123,6 +124,18 @@ public class EmployeeManager implements IEmployeeManager {
                     break;
             }
         }
+
+        if(option1.equals("-p")){
+            ArrayList<Employee> tempEmployee =result.stream().sorted(Comparator.comparing(Employee::getJoinYear)).collect(Collectors.toCollection(ArrayList::new));
+            if(tempEmployee.size() > 5){
+                result = new ArrayList<Employee>();
+                for(int i = 0; i <5 ; i++)
+                    result.add(tempEmployee.get(i));
+            }
+            else
+                result = tempEmployee;
+        }
+
         return result;
     }
 
