@@ -1,14 +1,14 @@
 import java.util.Objects;
 
 public class Name {
-    private String nameFull;
-    private String nameFirst;
-    private String nameLast;
+    private String fullName;
+    private String firstName;
+    private String lastName;
 
-    public Name(String name, String nameFirst, String nameLast) {
-        this.nameFull = name;
-        this.nameFirst = nameFirst;
-        this.nameLast = nameLast;
+    public Name(String fullName, String firstName, String lastName) {
+        this.fullName = fullName;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     @Override
@@ -16,35 +16,35 @@ public class Name {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Name name1 = (Name) o;
-        return Objects.equals(nameFull, name1.nameFull) && Objects.equals(nameFirst, name1.nameFirst) && Objects.equals(nameLast, name1.nameLast);
+        return Objects.equals(fullName, name1.fullName) && Objects.equals(firstName, name1.firstName) && Objects.equals(lastName, name1.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameFull, nameFirst, nameLast);
+        return Objects.hash(fullName, firstName, lastName);
     }
 
-    public String getNameFull() {
-        return nameFull;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setNameFull(String nameFull) {
-        this.nameFull = nameFull;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getNameFirst() {
-        return nameFirst;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setNameFirst(String nameFirst) {
-        this.nameFirst = nameFirst;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getNameLast() {
-        return nameLast;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setNameLast(String nameLast) {
-        this.nameLast = nameLast;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
