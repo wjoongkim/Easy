@@ -88,22 +88,22 @@ public class MOD {
 
     Stream<Employee> nameSearchStream(String option, String param) {
         if (option.compareTo("-f") == 0) {
-            return employees.stream().filter(c -> c.getName().getNameFirst().compareTo(param) == 0);
+            return employees.stream().filter(c -> c.getName().getFirstName().compareTo(param) == 0);
         } else if (option.compareTo("-l") == 0) {
-            return employees.stream().filter(c -> c.getName().getNameLast().compareTo(param) == 0);
+            return employees.stream().filter(c -> c.getName().getLastName().compareTo(param) == 0);
         } else if (option.compareTo(" ") == 0) {
-            return employees.stream().filter(c -> c.getName().getNameFull().compareTo(param) == 0);
+            return employees.stream().filter(c -> c.getName().getFullName().compareTo(param) == 0);
         }
         return null;
     }
 
     Stream<Employee> phoneNumSearchStream(String option, String param) {
         if (option.compareTo("-m") == 0) {
-            return employees.stream().filter(c -> c.getPhoneNum().getPhoneNumMiddle().compareTo(param) == 0);
+            return employees.stream().filter(c -> c.getPhoneNum().getMiddleNumber().compareTo(param) == 0);
         } else if (option.compareTo("-l") == 0) {
-            return employees.stream().filter(c -> c.getPhoneNum().getPhoneNumLast().compareTo(param) == 0);
+            return employees.stream().filter(c -> c.getPhoneNum().getLastNumber().compareTo(param) == 0);
         } else if (option.compareTo(" ") == 0) {
-            return employees.stream().filter(c -> c.getPhoneNum().getPhoneNumFull().compareTo(param) == 0);
+            return employees.stream().filter(c -> c.getPhoneNum().getFullNumber().compareTo(param) == 0);
         }
         return null;
     }
