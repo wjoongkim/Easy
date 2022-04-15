@@ -5,7 +5,7 @@ public class Phone {
     private String middleNumber;
     private String lastNumber;
 
-    public Phone(String phoneNum, String phoneNumMiddle, String phoneNumLast) {
+    public Phone(String fullNumber, String middleNumber, String lastNumber) {
         this.fullNumber = fullNumber;
         this.middleNumber = middleNumber;
         this.lastNumber = lastNumber;
