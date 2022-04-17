@@ -21,8 +21,9 @@ public class EmployeeManager implements IEmployeeManager {
     }
 
     @Override
-    public void delete(String[] args) {
-
+    public void delete(String args) {
+        DEL del = new DEL(employees);
+        System.out.println(del.Run(args));
     }
 
     @Override
