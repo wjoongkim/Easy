@@ -15,9 +15,15 @@ public class Add extends CRUDManager {
             intJoinYear += 100;
         }
 
-        employeeMap.put(tokens[4], new Employee(
-                tokens[4], new Name(tokens[5]), tokens[6], new Phone(tokens[7])
-                , new Birthday(tokens[8]), tokens[9], intJoinYear * 1000000 + Integer.parseInt(tokens[4].substring(2))));
+        final String EMPNO = tokens[4];
+        final String NAME = tokens[5];
+        final String CL = tokens[6];
+        final String PHONE = tokens[7];
+        final String BIRTHDAY = tokens[8];
+        final String CERTI = tokens[9];
+        final int JOINYEAR = intJoinYear * 1000000 + Integer.parseInt(tokens[4].substring(2));
+
+        employeeMap.put(EMPNO, new Employee(EMPNO, new Name(NAME), CL, new Phone(PHONE), new Birthday(BIRTHDAY), CERTI, JOINYEAR));
 
         return null;
     }
