@@ -13,7 +13,7 @@ public class Modify extends CRUDManager {
         String printOption = token[1];
         ArrayList<String> searchResult = Search(employeeMap, token[2], token[4], token[5]);
 
-        if (searchResult == null) return token[0] + ",None"; //검색 결과가 없는 경우 예외처리합니다.
+        if (searchResult == null) return token[0] + ",NONE"; //검색 결과가 없는 경우 예외처리합니다.
 
         if (printOption.compareTo("-p") == 0) {
             Set<String> searchfilter = searchResult.stream().collect(Collectors.toCollection(HashSet::new));
