@@ -31,8 +31,6 @@ public class EmployeeManager {
 
     @Deprecated
     public String modify(String args) {
-        MOD mod = new MOD(employees);
-        System.out.println(mod.Run(args));
-        return "";
+        return modify.calc(args);
     }
 }
