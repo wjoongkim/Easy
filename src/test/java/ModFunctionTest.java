@@ -5,9 +5,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -140,18 +138,18 @@ public class ModFunctionTest {
         ArrayList<Employee> list = new ArrayList<Employee>();
         EmployeeManager manager = new EmployeeManager(list);
 
-        manager.add("15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-        manager.add("17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
-        manager.add("18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
-        manager.add("88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
-        manager.add("19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
-        manager.add("17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
-        manager.add("18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
-        manager.add("01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
+        manager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+        manager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
+        manager.add("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
+        manager.add("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
+        manager.add("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
+        manager.add("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
+        manager.add("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
+        manager.add("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
 
         MOD mod = new MOD(list);
-        System.out.println(mod.Run("MOD,-p, , ,name,FB NTAWR,cl,CL3"));
-
+        System.out.println(mod.Run("MOD,-p, , ,certi,PRO,cl,CL3"));
+        System.out.println("??");
         manager.employees.stream().forEach(c -> System.out.println(c.getEmpInfo("MOD")));
 
         System.out.println();
@@ -170,14 +168,14 @@ public class ModFunctionTest {
         ArrayList<Employee> list = new ArrayList<Employee>();
         EmployeeManager manager = new EmployeeManager(list);
 
-        manager.add("15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-        manager.add("17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
-        manager.add("18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
-        manager.add("88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
-        manager.add("19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
-        manager.add("17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
-        manager.add("18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
-        manager.add("01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
+        manager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+        manager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
+        manager.add("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
+        manager.add("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
+        manager.add("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
+        manager.add("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
+        manager.add("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
+        manager.add("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
 
         MOD mod = new MOD(list);
         assertEquals(mod.Search("","name","NQ LVARW"),null,"옵션없음 테스트");
@@ -190,14 +188,14 @@ public class ModFunctionTest {
         ArrayList<Employee> list = new ArrayList<Employee>();
         EmployeeManager manager = new EmployeeManager(list);
 
-        manager.add("15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-        manager.add("17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
-        manager.add("18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
-        manager.add("88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
-        manager.add("19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
-        manager.add("17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
-        manager.add("18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
-        manager.add("01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
+        manager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+        manager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
+        manager.add("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
+        manager.add("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
+        manager.add("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
+        manager.add("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
+        manager.add("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
+        manager.add("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
 
         MOD mod = new MOD(list);
         assertEquals(mod.Search("","phoneNum","010-3091-9521"),null,"옵션없음 테스트");
@@ -210,14 +208,14 @@ public class ModFunctionTest {
         ArrayList<Employee> list = new ArrayList<Employee>();
         EmployeeManager manager = new EmployeeManager(list);
 
-        manager.add("15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-        manager.add("17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
-        manager.add("18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
-        manager.add("88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
-        manager.add("19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
-        manager.add("17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
-        manager.add("18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
-        manager.add("01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
+        manager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+        manager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
+        manager.add("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
+        manager.add("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
+        manager.add("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
+        manager.add("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
+        manager.add("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
+        manager.add("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
 
         MOD mod = new MOD(list);
         assertEquals(mod.Search("","birthday","20030413"),null,"옵션없음 테스트");
@@ -225,5 +223,148 @@ public class ModFunctionTest {
         assertEquals(mod.Search("-y","birthday","2003").count(),1,"년도 찾기");
         assertEquals(mod.Search("-m","birthday","12").count(),2,"월 찾기");
         assertEquals(mod.Search("-d","birthday","13").count(),1,"일 찾기");
+    }
+
+
+    //NEW Modify Class
+
+    @Test
+    void EmployeeListTest2() {
+        Map<String, Employee> m = new HashMap<String, Employee>();
+        Modify mod = new Modify();
+
+        m.put("15123099", new Employee(
+                "15123099", new Name("VXIHXOTH JHOP", "VXIHXOTH", "JHOP"), "CL3", new Phone("010-3112-2609", "3112", "2609"), new Birthday("19771211"), "ADV", 2015123099
+        ));
+        m.put("17112609", new Employee(
+                "17112609", new Name("FB NTAWR", "FB", "NTAWR"), "CL4", new Phone("010-5645-6122", "5645", "6122"), new Birthday("19861203"), "PRO", 2017112609
+        ));
+        m.put("18115040", new Employee(
+                "18115040", new Name("TTETHU HBO", "TTETHU", "HBO"), "CL3", new Phone("010-4581-2050", "4581", "2050"), new Birthday("20080718"), "ADV", 2018115040
+        ));
+        m.put("88114052", new Employee(
+                "88114052", new Name("NQ LVARW", "NQ", "LVARW"), "CL4", new Phone("010-4528-3059", "4528", "3059"), new Birthday("19911021"), "PRO", 1988114052
+        ));
+        m.put("19129568", new Employee(
+                "19129568", new Name("SRERLALH HMEF", "SRERLALH", "HMEF"), "CL2", new Phone("010-3091-9521", "3091", "9521"), new Birthday("19640910"), "PRO", 2019129568
+        ));
+        m.put("17111236", new Employee(
+                "17111236", new Name("VSID TVO", "VSID", "TVO"), "CL1", new Phone("010-3669-1077", "3669", "1077"), new Birthday("20120718"), "PRO", 2017111236
+        ));
+        m.put("18117906", new Employee(
+                "18117906", new Name("TWU QSOLT", "TWU", "QSOLT"), "CL4", new Phone("010-6672-7186", "6672", "7186"), new Birthday("20030413"), "PRO", 2018117906
+        ));
+        m.put("01122329", new Employee(
+                "01122329", new Name("DN WD", "DN", "WD"), "CL4", new Phone("010-7174-5680", "7174", "5680"), new Birthday("20071117"), "PRO", 2001122329
+        ));
+        System.out.println("Before");
+        System.out.println(mod.calc(m, "MOD,-p, , ,certi,PRO,cl,CL3"));
+        assertEquals(mod.calc(m, "MOD,, , ,certi,PRO,cl,CL3"), "MOD,6");
+        System.out.println("After");
+        m.entrySet().stream().filter(c->c.getValue().getCerti().compareTo("PRO")==0).forEach(s->System.out.println(s.getValue().getEmpInfo("MOD")));
+    }
+    @Test
+    void SearchNameTest2() {
+        Map<String, Employee> m = new HashMap<String, Employee>();
+        Modify mod = new Modify();
+
+        m.put("15123099", new Employee(
+                "15123099", new Name("VXIHXOTH JHOP", "VXIHXOTH", "JHOP"), "CL3", new Phone("010-3112-2609", "3112", "2609"), new Birthday("19771211"), "ADV", 2015123099
+        ));
+        m.put("17112609", new Employee(
+                "17112609", new Name("FB NTAWR", "FB", "NTAWR"), "CL4", new Phone("010-5645-6122", "5645", "6122"), new Birthday("19861203"), "PRO", 2017112609
+        ));
+        m.put("18115040", new Employee(
+                "18115040", new Name("TTETHU HBO", "TTETHU", "HBO"), "CL3", new Phone("010-4581-2050", "4581", "2050"), new Birthday("20080718"), "ADV", 2018115040
+        ));
+        m.put("88114052", new Employee(
+                "88114052", new Name("NQ LVARW", "NQ", "LVARW"), "CL4", new Phone("010-4528-3059", "4528", "3059"), new Birthday("19911021"), "PRO", 1988114052
+        ));
+        m.put("19129568", new Employee(
+                "19129568", new Name("SRERLALH HMEF", "SRERLALH", "HMEF"), "CL2", new Phone("010-3091-9521", "3091", "9521"), new Birthday("19640910"), "PRO", 2019129568
+        ));
+        m.put("17111236", new Employee(
+                "17111236", new Name("VSID TVO", "VSID", "TVO"), "CL1", new Phone("010-3669-1077", "3669", "1077"), new Birthday("20120718"), "PRO", 2017111236
+        ));
+        m.put("18117906", new Employee(
+                "18117906", new Name("TWU QSOLT", "TWU", "QSOLT"), "CL4", new Phone("010-6672-7186", "6672", "7186"), new Birthday("20030413"), "PRO", 2018117906
+        ));
+        m.put("01122329", new Employee(
+                "01122329", new Name("DN WD", "DN", "WD"), "CL4", new Phone("010-7174-5680", "7174", "5680"), new Birthday("20071117"), "PRO", 2001122329
+        ));
+
+        assertEquals(mod.Search(m,"","name","NQ LVARW"),null,"옵션없음 테스트");
+        assertEquals(mod.Search(m," ","name","NQ LVARW").size(),1,"사람 풀네임 찾기");
+        assertEquals(mod.Search(m,"-f","name","VSID").size(),1,"사람 성 찾기");
+        assertEquals(mod.Search(m,"-l","name","TVO").size(),1,"사람 이름 찾기");
+    }
+    @Test
+    void SearchNumTest2() {
+        Map<String, Employee> m = new HashMap<String, Employee>();
+        Modify mod = new Modify();
+
+        m.put("15123099", new Employee(
+                "15123099", new Name("VXIHXOTH JHOP", "VXIHXOTH", "JHOP"), "CL3", new Phone("010-3112-2609", "3112", "2609"), new Birthday("19771211"), "ADV", 2015123099
+        ));
+        m.put("17112609", new Employee(
+                "17112609", new Name("FB NTAWR", "FB", "NTAWR"), "CL4", new Phone("010-5645-6122", "5645", "6122"), new Birthday("19861203"), "PRO", 2017112609
+        ));
+        m.put("18115040", new Employee(
+                "18115040", new Name("TTETHU HBO", "TTETHU", "HBO"), "CL3", new Phone("010-4581-2050", "4581", "2050"), new Birthday("20080718"), "ADV", 2018115040
+        ));
+        m.put("88114052", new Employee(
+                "88114052", new Name("NQ LVARW", "NQ", "LVARW"), "CL4", new Phone("010-4528-3059", "4528", "3059"), new Birthday("19911021"), "PRO", 1988114052
+        ));
+        m.put("19129568", new Employee(
+                "19129568", new Name("SRERLALH HMEF", "SRERLALH", "HMEF"), "CL2", new Phone("010-3091-9521", "3091", "9521"), new Birthday("19640910"), "PRO", 2019129568
+        ));
+        m.put("17111236", new Employee(
+                "17111236", new Name("VSID TVO", "VSID", "TVO"), "CL1", new Phone("010-3669-1077", "3669", "1077"), new Birthday("20120718"), "PRO", 2017111236
+        ));
+        m.put("18117906", new Employee(
+                "18117906", new Name("TWU QSOLT", "TWU", "QSOLT"), "CL4", new Phone("010-6672-7186", "6672", "7186"), new Birthday("20030413"), "PRO", 2018117906
+        ));
+        m.put("01122329", new Employee(
+                "01122329", new Name("DN WD", "DN", "WD"), "CL4", new Phone("010-7174-5680", "7174", "5680"), new Birthday("20071117"), "PRO", 2001122329
+        ));
+        assertEquals(mod.Search(m,"","phoneNum","010-3091-9521"),null,"옵션없음 테스트");
+        assertEquals(mod.Search(m," ","phoneNum","010-3091-9521").size(),1,"전체 번호찾기");
+        assertEquals(mod.Search(m,"-m","phoneNum","3091").size(),1,"중간 번호 찾기");
+        assertEquals(mod.Search(m,"-l","phoneNum","9521").size(),1,"끝 번호 찾기");
+    }
+    @Test
+    void SearchBirthdayTest2() {
+        Map<String, Employee> m = new HashMap<String, Employee>();
+        Modify mod = new Modify();
+
+        m.put("15123099", new Employee(
+                "15123099", new Name("VXIHXOTH JHOP", "VXIHXOTH", "JHOP"), "CL3", new Phone("010-3112-2609", "3112", "2609"), new Birthday("19771211"), "ADV", 2015123099
+        ));
+        m.put("17112609", new Employee(
+                "17112609", new Name("FB NTAWR", "FB", "NTAWR"), "CL4", new Phone("010-5645-6122", "5645", "6122"), new Birthday("19861203"), "PRO", 2017112609
+        ));
+        m.put("18115040", new Employee(
+                "18115040", new Name("TTETHU HBO", "TTETHU", "HBO"), "CL3", new Phone("010-4581-2050", "4581", "2050"), new Birthday("20080718"), "ADV", 2018115040
+        ));
+        m.put("88114052", new Employee(
+                "88114052", new Name("NQ LVARW", "NQ", "LVARW"), "CL4", new Phone("010-4528-3059", "4528", "3059"), new Birthday("19911021"), "PRO", 1988114052
+        ));
+        m.put("19129568", new Employee(
+                "19129568", new Name("SRERLALH HMEF", "SRERLALH", "HMEF"), "CL2", new Phone("010-3091-9521", "3091", "9521"), new Birthday("19640910"), "PRO", 2019129568
+        ));
+        m.put("17111236", new Employee(
+                "17111236", new Name("VSID TVO", "VSID", "TVO"), "CL1", new Phone("010-3669-1077", "3669", "1077"), new Birthday("20120718"), "PRO", 2017111236
+        ));
+        m.put("18117906", new Employee(
+                "18117906", new Name("TWU QSOLT", "TWU", "QSOLT"), "CL4", new Phone("010-6672-7186", "6672", "7186"), new Birthday("20030413"), "PRO", 2018117906
+        ));
+        m.put("01122329", new Employee(
+                "01122329", new Name("DN WD", "DN", "WD"), "CL4", new Phone("010-7174-5680", "7174", "5680"), new Birthday("20071117"), "PRO", 2001122329
+        ));
+        assertEquals(mod.Search(m,"","birthday","20030413"),null,"옵션없음 테스트");
+        assertEquals(mod.Search(m," ","birthday","20030413").size(),1,"생년월일 전체 찾기");
+        assertEquals(mod.Search(m,"-y","birthday","2003").size(),1,"년도 찾기");
+        assertEquals(mod.Search(m,"-m","birthday","12").size(),2,"월 찾기");
+        assertEquals(mod.Search(m,"-d","birthday","13").size(),1,"일 찾기");
     }
 }
