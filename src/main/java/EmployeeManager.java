@@ -7,6 +7,11 @@ public class EmployeeManager {
     ArrayList<Employee> employees = new ArrayList<>();
 
     Map<String, Employee> employeeMap = new HashMap<>();
+    CRUDManager search = new Search();
+    CRUDManager add = new Add();
+    CRUDManager modify = new Modify();
+    CRUDManager delete = new Delete();
+
 
     public EmployeeManager(ArrayList<Employee> employees) {
         this.employees = employees;
