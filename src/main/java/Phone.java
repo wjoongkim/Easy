@@ -5,10 +5,11 @@ public class Phone {
     private String middleNumber;
     private String lastNumber;
 
-    public Phone(String fullNumber, String middleNumber, String lastNumber) {
+    public Phone(String fullNumber) {
+        String[] numberTokens = fullNumber.split("-");
         this.fullNumber = fullNumber;
-        this.middleNumber = middleNumber;
-        this.lastNumber = lastNumber;
+        this.middleNumber = numberTokens[1];;
+        this.lastNumber = numberTokens[2];
     }
 
     @Override

@@ -23,13 +23,12 @@ public class EmployeeManager {
         return add.Run(args);
     }
 
-    @Deprecated
-    public void delete(String[] args) {
-
+    public String delete(String args) {
+        return delete.calc(employeeMap, args);
     }
 
     @Deprecated
-    public ArrayList<Employee> search(String args) {
+    public String search(String args) {
 //SCH,-p,-d, ,birthday,04
         //SCH, , , ,employeeNum,79110836\
         //SCH,-p, , ,certi,PRO
@@ -139,12 +138,13 @@ public class EmployeeManager {
                 result = tempEmployee;
         }
 
-        return result;
+        return "";
     }
 
     @Deprecated
-    public void modify(String args) {
+    public String modify(String args) {
         MOD mod = new MOD(employees);
         System.out.println(mod.Run(args));
+        return "";
     }
 }
