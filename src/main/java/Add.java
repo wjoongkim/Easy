@@ -2,7 +2,7 @@ import java.util.Map;
 
 public class Add extends CRUDManager {
 
-    public Add(Map<String, Employee> employeeMap){
+    public Add(Map<String, Employee> employeeMap) {
         super(employeeMap);
     }
 

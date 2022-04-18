@@ -8,7 +8,7 @@ public class Phone {
     public Phone(String fullNumber) {
         String[] numberTokens = fullNumber.split("-");
         this.fullNumber = fullNumber;
-        this.middleNumber = numberTokens[1];;
+        this.middleNumber = numberTokens[1];
         this.lastNumber = numberTokens[2];
     }
 

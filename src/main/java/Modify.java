@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 
 public class Modify extends CRUDManager {
 
-    public Modify(Map<String, Employee> employeeMap){
+    public Modify(Map<String, Employee> employeeMap) {
         super(employeeMap);
     }
 
