@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Search extends CRUDManager {
 
@@ -25,13 +26,7 @@ public class Search extends CRUDManager {
             return "SCH,NONE";
 
         if(option1.equals("-p")){
-            pOtionList = getPOption(employeeMap, empnoList);
-            String resultStr = "";
-            for(Employee employee : pOtionList){
-                resultStr += employee.getEmpInfo("SCH");
-                resultStr += "\n";
-            }
-            return resultStr.trim();
+            return  getPOption(employeeMap, empnoList).stream().map(e -> e.getEmpInfo("SCH")).collect(Collectors.joining("\n"));
         }
 
         return "SCH," + empnoList.size();
