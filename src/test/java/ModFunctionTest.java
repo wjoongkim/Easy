@@ -136,7 +136,7 @@ public class ModFunctionTest {
     @Test
     void EmployeeListTest() {
         ArrayList<Employee> list = new ArrayList<Employee>();
-        EmployeeManager manager = new EmployeeManager(list);
+        EmployeeManager manager = new EmployeeManager();
 
         manager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
         manager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
@@ -166,7 +166,7 @@ public class ModFunctionTest {
     @Test
     void SearchNameTest() {
         ArrayList<Employee> list = new ArrayList<Employee>();
-        EmployeeManager manager = new EmployeeManager(list);
+        EmployeeManager manager = new EmployeeManager();
 
         manager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
         manager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
@@ -187,7 +187,7 @@ public class ModFunctionTest {
     @Test
     void SearchNumTest() {
         ArrayList<Employee> list = new ArrayList<Employee>();
-        EmployeeManager manager = new EmployeeManager(list);
+        EmployeeManager manager = new EmployeeManager();
 
         manager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
         manager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
@@ -208,7 +208,7 @@ public class ModFunctionTest {
     @Test
     void SearchBirthdayTest() {
         ArrayList<Employee> list = new ArrayList<Employee>();
-        EmployeeManager manager = new EmployeeManager(list);
+        EmployeeManager manager = new EmployeeManager();
 
         manager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
         manager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
