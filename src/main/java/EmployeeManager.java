@@ -144,7 +144,6 @@ public class EmployeeManager {
 
     @Deprecated
     public String modify(String args) {
-        Modify mod = new Modify();
-        return mod.calc(employeeMap, args);
+        return modify.calc(args);
     }
 }

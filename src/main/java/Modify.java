@@ -14,13 +14,12 @@ public class Modify extends CRUDManager {
 
         if (token.length < 7) return null; //입력이 올바르지 않는 경우 예외처리합니다.
 
-        //List<String> searchResult = Search(employeeMap, token[2], token[4], token[5]);
-        ArrayList<String> searchResult = getEmpNoList(employeeMap, args);
+        ArrayList<String> searchResult = getEmpNoList(args);
 
-        if (searchResult == null) return token[0] + ",NONE"; //검색 결과가 없는 경우 예외처리합니다.
+        if (searchResult.size() == 0) return token[0] + ",NONE";//검색 결과가 없는 경우 예외처리합니다.
 
         if (token[1].compareTo("-p") == 0) {
-            result = getPOption(employeeMap, searchResult).stream().map(e -> e.getEmpInfo(token[0])).collect(Collectors.joining("\n"));
+            result = getPOption(searchResult).stream().map(e -> e.getEmpInfo(token[0])).collect(Collectors.joining("\n"));
         } else {
             result = token[0] + "," + searchResult.size();
         }
