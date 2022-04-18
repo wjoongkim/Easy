@@ -4,8 +4,25 @@ import java.util.stream.Collectors;
 public abstract class CRUDManager {
     abstract String calc(Map<String, Employee> employeeMap, String args);
 
+    protected String getEmployeeMeberString(Employee employee, String calType){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(calType);
+        stringBuilder.append(",");
+        stringBuilder.append(employee.getEmployeeNum());
+        stringBuilder.append(",");
+        stringBuilder.append(employee.getName().getFullName());
+        stringBuilder.append(",");
+        stringBuilder.append(employee.getCl());
+        stringBuilder.append(",");
+        stringBuilder.append(employee.getPhoneNum().getFullNumber());
+        stringBuilder.append(",");
+        stringBuilder.append(employee.getBirthday().getBirthday());
+        stringBuilder.append(",");
+        stringBuilder.append(employee.getCerti());
+        return stringBuilder.toString();
+    }
 
-    ArrayList<Employee> getPOption(Map<String, Employee> employeeMap, ArrayList<String> empnoList){
+    protected ArrayList<Employee> getPOption(Map<String, Employee> employeeMap, ArrayList<String> empnoList){
 
         Set<String> searchfilter = empnoList.stream().collect(Collectors.toCollection(HashSet::new));
         ArrayList<Employee> result = new ArrayList<>();
@@ -19,7 +36,7 @@ public abstract class CRUDManager {
         return result;
     }
 
-    ArrayList<String> getEmpnoList(Map<String, Employee> employeeMap, String args){
+    protected ArrayList<String> getEmpNoList(Map<String, Employee> employeeMap, String args){
         final int OPERATION = 0;
         final int OPTION1 = 1;
         final int OPTION2 = 2;
