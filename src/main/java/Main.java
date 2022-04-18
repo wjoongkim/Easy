@@ -18,7 +18,7 @@ public class Main {
         String outputFileName = args[1];
         BufferedWriter output = new BufferedWriter(new FileWriter(outputFileName));
 
-        EmployeeManager employeeManager = new EmployeeManager(new ArrayList<Employee>());
+        EmployeeManager employeeManager = new EmployeeManager();
 
         BufferedReader br = new BufferedReader(new FileReader(inputFileName));
         String inputLine;
