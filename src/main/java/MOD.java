@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -19,10 +20,15 @@ public class MOD {
         String printOption = token[1];
         Stream<Employee> searchStream = Search(token[2], token[4], token[5]);
 
-        if (searchStream == null) return null; //검색 결과가 없는 경우 예외처리합니다.
+        if (searchStream == null) return token[0] + ",None"; //검색 결과가 없는 경우 예외처리합니다.
 
         if (printOption.compareTo("-p") == 0) {
-            result = searchStream.limit(5).map(c -> c.getEmpInfo("MOD,")).collect(Collectors.joining("\n"));
+            result = searchStream.sorted(new Comparator<Employee>() {
+                @Override
+                public int compare(Employee o1, Employee o2) {
+                    return o1.getJoinYear() - o2.getJoinYear();
+                }
+            }).limit(5).map(c -> c.getEmpInfo("MOD")).collect(Collectors.joining("\n"));
 
         } else {
             result = token[0] + "," + String.valueOf(searchStream.filter(p -> p.getJoinYear() > 0).count());
