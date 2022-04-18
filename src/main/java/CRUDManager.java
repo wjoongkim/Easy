@@ -59,7 +59,7 @@ public abstract class CRUDManager {
                         break;
                 }
             }
-            if (condition.equals("phone")) {
+            if (condition.equals("phoneNum")) {
                 switch (option2) {
                     case "-m":
                         result = (ArrayList<String>) employeeMap.entrySet().stream()
