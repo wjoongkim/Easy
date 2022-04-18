@@ -82,7 +82,7 @@ public class AddFunctionTest {
     void add_함수_Test() {
 
         ArrayList<Employee> employees = new ArrayList<>();
-        EmployeeManager employeeManager = new EmployeeManager(employees);
+        EmployeeManager employeeManager = new EmployeeManager();
 
 //        Employee employee = employeeManager.add.calc(employeeMap,"ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
         employeeManager.add.calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");

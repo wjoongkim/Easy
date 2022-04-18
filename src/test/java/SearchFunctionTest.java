@@ -461,8 +461,7 @@ public class SearchFunctionTest {
 
     @Test
     void search_함수_Test() {
-        ArrayList<Employee> employees = new ArrayList<>();
-        EmployeeManager employeeManager = new EmployeeManager(employees);
+        EmployeeManager employeeManager = new EmployeeManager();
 
         employeeManager.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
         employeeManager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
