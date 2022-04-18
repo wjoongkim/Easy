@@ -4,8 +4,12 @@ import java.util.stream.Collectors;
 
 public class Search extends CRUDManager {
 
+    public Search(Map<String, Employee> employeeMap){
+        super(employeeMap);
+    }
+
     @Override
-    String calc(Map<String, Employee> employeeMap, String args){
+    String calc(String args){
         final int OPERATION = 0;
         final int OPTION1 = 1;
         final int OPTION2 = 2;
@@ -20,13 +24,13 @@ public class Search extends CRUDManager {
         String condition = tokens[CONDITION];
         String keyword = tokens[KEYWORD];
 
-        ArrayList<String> empnoList = getEmpNoList(employeeMap, args);
+        ArrayList<String> empnoList = getEmpNoList(args);
         ArrayList<Employee> pOtionList;
         if(empnoList.size() == 0)
             return "SCH,NONE";
 
         if(option1.equals("-p")){
-            return  getPOption(employeeMap, empnoList).stream().map(e -> e.getEmpInfo("SCH")).collect(Collectors.joining("\n"));
+            return  getPOption(empnoList).stream().map(e -> e.getEmpInfo("SCH")).collect(Collectors.joining("\n"));
         }
 
         return "SCH," + empnoList.size();

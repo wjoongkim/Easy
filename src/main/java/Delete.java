@@ -2,8 +2,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Delete extends CRUDManager {
+
+    public Delete(Map<String, Employee> employeeMap){
+        super(employeeMap);
+    }
+
     @Override
-    String calc(Map<String, Employee> employeeMap, String args) {
+    String calc(String args) {
         String result = "";
         String[] token = args.split(",");
 
@@ -18,12 +23,13 @@ public class Delete extends CRUDManager {
         } else {
             result = token[0] + "," + (empNoList.size()==0?"NONE":empNoList.size());
         }
-        delete(employeeMap, empNoList);
+
+        delete(empNoList);
 
         return result;
     }
 
-    void delete(Map<String, Employee> employeeMap, ArrayList<String> empNoList) {
+    void delete(ArrayList<String> empNoList) {
         for (String empNo : empNoList) {
             employeeMap.remove(empNo);
         }
