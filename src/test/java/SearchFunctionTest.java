@@ -21,21 +21,21 @@ public class SearchFunctionTest {
     void getEmployeeMeberString_Test(){
         CRUDManager crudManager = new Search();
 
-        String expectedVal = crudManager.getEmployeeMeberString(new Employee("02117175"
+        String expectedVal = (new Employee("02117175"
                 , new Name("SBILHUT LDEXRI", "SBILHUT", "LDEXRI")
                 , "CL4"
                 , new Phone("010-2814-1699", "2814", "1699")
                 , new Birthday("19950704")
                 , "ADV"
-                , 2002117175), "SCH");
+                , 2002117175)).getEmpInfo("SCH");
         assertEquals("SCH,02117175,SBILHUT LDEXRI,CL4,010-2814-1699,19950704,ADV", expectedVal);
-        String expectedVal2 = crudManager.getEmployeeMeberString(new Employee("88114052"
+        String expectedVal2 = (new Employee("88114052"
                 , new Name("NQ LVARW", "NQ", "LVARW")
                 , "CL4"
                 , new Phone("010-4528-3059", "4528", "3059")
                 , new Birthday("19911021")
                 , "PRO"
-                , 1988114052), "SCH");
+                , 1988114052)).getEmpInfo("SCH");
         assertEquals("SCH,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO", expectedVal2);
 
 

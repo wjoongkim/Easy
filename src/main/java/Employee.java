@@ -90,6 +90,6 @@ public class Employee {
     }
 
     public String getEmpInfo(String op) {
-        return op + "," + employeeNum + name.getFullName() + "," + cl + "," + phoneNum.getFullNumber() + ',' + getBirthday().getBirthday() + ',' + getCerti();
+        return op + "," + employeeNum + "," + name.getFullName() + "," + cl + "," + phoneNum.getFullNumber() + ',' + getBirthday().getBirthday() + ',' + getCerti();
     }
 }

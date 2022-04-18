@@ -28,7 +28,7 @@ public class Search extends CRUDManager {
             pOtionList = getPOption(employeeMap, empnoList);
             String resultStr = "";
             for(Employee employee : pOtionList){
-                resultStr += getEmployeeMeberString(employee, "SCH");
+                resultStr += employee.getEmpInfo("SCH");
                 resultStr += "\n";
             }
             return resultStr.trim();

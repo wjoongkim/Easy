@@ -4,24 +4,6 @@ import java.util.stream.Collectors;
 public abstract class CRUDManager {
     abstract String calc(Map<String, Employee> employeeMap, String args);
 
-    protected String getEmployeeMeberString(Employee employee, String calType){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(calType);
-        stringBuilder.append(",");
-        stringBuilder.append(employee.getEmployeeNum());
-        stringBuilder.append(",");
-        stringBuilder.append(employee.getName().getFullName());
-        stringBuilder.append(",");
-        stringBuilder.append(employee.getCl());
-        stringBuilder.append(",");
-        stringBuilder.append(employee.getPhoneNum().getFullNumber());
-        stringBuilder.append(",");
-        stringBuilder.append(employee.getBirthday().getBirthday());
-        stringBuilder.append(",");
-        stringBuilder.append(employee.getCerti());
-        return stringBuilder.toString();
-    }
-
     protected ArrayList<Employee> getPOption(Map<String, Employee> employeeMap, ArrayList<String> empnoList){
 
         Set<String> searchfilter = empnoList.stream().collect(Collectors.toCollection(HashSet::new));
