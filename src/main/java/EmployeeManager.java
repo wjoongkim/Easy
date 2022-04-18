@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-public class EmployeeManager implements IEmployeeManager {
+public class EmployeeManager {
     @Deprecated
     ArrayList<Employee> employees = new ArrayList<>();
 
@@ -13,20 +13,17 @@ public class EmployeeManager implements IEmployeeManager {
     }
 
     @Deprecated
-    @Override
     public Employee add(String args) {
         Add add = new Add(employees);
         return add.Run(args);
     }
 
     @Deprecated
-    @Override
     public void delete(String[] args) {
 
     }
 
     @Deprecated
-    @Override
     public ArrayList<Employee> search(String args) {
 //SCH,-p,-d, ,birthday,04
         //SCH, , , ,employeeNum,79110836\
@@ -141,7 +138,6 @@ public class EmployeeManager implements IEmployeeManager {
     }
 
     @Deprecated
-    @Override
     public void modify(String args) {
         MOD mod = new MOD(employees);
         System.out.println(mod.Run(args));
