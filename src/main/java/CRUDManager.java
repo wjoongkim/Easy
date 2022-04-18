@@ -26,10 +26,10 @@ public abstract class CRUDManager {
         final int CONDITION = 4;
         final int KEYWORD = 5;
 
-        String[] tokens = args.replace(" ", "").split(",");
-        String option1 = tokens[OPTION1];
-        String option2 = tokens[OPTION2];
-        String option3 = tokens[OPTION3];
+        String[] tokens = args.split(",");
+        String option1 = tokens[OPTION1].trim();
+        String option2 = tokens[OPTION2].trim();
+        String option3 = tokens[OPTION3].trim();
         String condition = tokens[CONDITION];
         String keyword = tokens[KEYWORD];
 
