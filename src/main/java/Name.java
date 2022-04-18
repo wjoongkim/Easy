@@ -5,10 +5,12 @@ public class Name {
     private String firstName;
     private String lastName;
 
-    public Name(String fullName, String firstName, String lastName) {
+    public Name(String fullName) {
+        String[] nameTokens = fullName.split(" ");
         this.fullName = fullName;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = nameTokens[0];
+        this.lastName = nameTokens[1];
+
     }
 
     @Override
