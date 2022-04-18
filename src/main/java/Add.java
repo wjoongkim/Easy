@@ -10,6 +10,10 @@ public class Add extends CRUDManager {
     }
 
     ArrayList<Employee> employees;
+    public Add() {
+
+    }
+
 
     public Add(ArrayList<Employee> employees) {
         this.employees = employees;
