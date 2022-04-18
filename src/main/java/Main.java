@@ -1,6 +1,4 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
     static public void main(String[] args) throws IOException {
@@ -17,12 +15,11 @@ public class Main {
         String inputFileName = args[0];
         String outputFileName = args[1];
         BufferedWriter output = new BufferedWriter(new FileWriter(outputFileName));
-
+        BufferedReader input = new BufferedReader(new FileReader(inputFileName));
         EmployeeManager employeeManager = new EmployeeManager();
-
-        BufferedReader br = new BufferedReader(new FileReader(inputFileName));
         String inputLine;
-        while ((inputLine = br.readLine()) != null) {
+
+        while ((inputLine = input.readLine()) != null) {
 
             String[] tokens = inputLine.split(",");
 
@@ -47,7 +44,7 @@ public class Main {
                     break;
             }
         }
-        br.close();
+        input.close();
         output.close();
     }
 }
