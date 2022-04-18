@@ -2,9 +2,15 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class CRUDManager {
-    abstract String calc(Map<String, Employee> employeeMap, String args);
+    Map<String, Employee> employeeMap;
 
-    protected ArrayList<Employee> getPOption(Map<String, Employee> employeeMap, ArrayList<String> empnoList){
+    public CRUDManager(Map<String, Employee> employeeMap){
+        this.employeeMap = employeeMap;
+    }
+
+    abstract String calc(String args);
+
+    protected ArrayList<Employee> getPOption(ArrayList<String> empnoList){
 
         Set<String> searchfilter = empnoList.stream().collect(Collectors.toCollection(HashSet::new));
         ArrayList<Employee> result = new ArrayList<>();
@@ -18,7 +24,7 @@ public abstract class CRUDManager {
         return result;
     }
 
-    protected ArrayList<String> getEmpNoList(Map<String, Employee> employeeMap, String args){
+    protected ArrayList<String> getEmpNoList(String args){
         final int OPERATION = 0;
         final int OPTION1 = 1;
         final int OPTION2 = 2;
@@ -26,10 +32,10 @@ public abstract class CRUDManager {
         final int CONDITION = 4;
         final int KEYWORD = 5;
 
-        String[] tokens = args.replace(" ", "").split(",");
-        String option1 = tokens[OPTION1];
-        String option2 = tokens[OPTION2];
-        String option3 = tokens[OPTION3];
+        String[] tokens = args.split(",");
+        String option1 = tokens[OPTION1].trim();
+        String option2 = tokens[OPTION2].trim();
+        String option3 = tokens[OPTION3].trim();
         String condition = tokens[CONDITION];
         String keyword = tokens[KEYWORD];
 
