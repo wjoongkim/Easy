@@ -180,8 +180,8 @@ public class ModFunctionTest {
         MOD mod = new MOD(list);
         assertEquals(mod.Search("","name","NQ LVARW"),null,"옵션없음 테스트");
         assertEquals(mod.Search(" ","name","NQ LVARW").count(),1,"사람 풀네임 찾기");
-        assertEquals(mod.Search("-f","name","VSID").count(),1,"사람 성 찾기");
-        assertEquals(mod.Search("-l","name","TVO").count(),1,"사람 이름 찾기");
+        assertEquals(mod.Search("-f","name","VSID").count(),1,"사람 이름 찾기");
+        assertEquals(mod.Search("-l","name","TVO").count(),1,"사람 성 찾기");
     }
     @Test
     void SearchNumTest() {
@@ -295,8 +295,8 @@ public class ModFunctionTest {
 
         assertEquals(mod.Search(m,"","name","NQ LVARW"),null,"옵션없음 테스트");
         assertEquals(mod.Search(m," ","name","NQ LVARW").size(),1,"사람 풀네임 찾기");
-        assertEquals(mod.Search(m,"-f","name","VSID").size(),1,"사람 성 찾기");
-        assertEquals(mod.Search(m,"-l","name","TVO").size(),1,"사람 이름 찾기");
+        assertEquals(mod.Search(m,"-f","name","VSID").size(),1,"사람 이름 찾기");
+        assertEquals(mod.Search(m,"-l","name","TVO").size(),1,"사람  찾기");
     }
     @Test
     void SearchNumTest2() {
