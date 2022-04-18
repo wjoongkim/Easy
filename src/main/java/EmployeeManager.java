@@ -129,14 +129,13 @@ public class EmployeeManager {
             }
         }
 
-        if(option1.equals("-p")){
-            ArrayList<Employee> tempEmployee =result.stream().sorted(Comparator.comparing(Employee::getJoinYear)).collect(Collectors.toCollection(ArrayList::new));
-            if(tempEmployee.size() > 5){
+        if (option1.equals("-p")) {
+            ArrayList<Employee> tempEmployee = result.stream().sorted(Comparator.comparing(Employee::getJoinYear)).collect(Collectors.toCollection(ArrayList::new));
+            if (tempEmployee.size() > 5) {
                 result = new ArrayList<Employee>();
-                for(int i = 0; i <5 ; i++)
+                for (int i = 0; i < 5; i++)
                     result.add(tempEmployee.get(i));
-            }
-            else
+            } else
                 result = tempEmployee;
         }
 
@@ -145,8 +144,6 @@ public class EmployeeManager {
 
     @Deprecated
     public String modify(String args) {
-        MOD mod = new MOD(employees);
-        System.out.println(mod.Run(args));
-        return "";
+        return modify.calc(args);
     }
 }
