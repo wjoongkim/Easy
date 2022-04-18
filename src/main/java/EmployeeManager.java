@@ -12,6 +12,11 @@ public class EmployeeManager {
     CRUDManager modify = new Modify(employeeMap);
     CRUDManager delete = new Delete(employeeMap);
 
+
+    public EmployeeManager(ArrayList<Employee> employees) {
+        this.employees = employees;
+    }
+
     @Deprecated
     public Employee add(String args) {
         Add add = new Add(employees);
