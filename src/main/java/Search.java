@@ -24,13 +24,13 @@ public class Search extends CRUDManager {
         String condition = tokens[CONDITION];
         String keyword = tokens[KEYWORD];
 
-        ArrayList<String> empnoList = getEmpNoList(employeeMap, args);
+        ArrayList<String> empnoList = getEmpNoList(args);
         ArrayList<Employee> pOtionList;
         if(empnoList.size() == 0)
             return "SCH,NONE";
 
         if(option1.equals("-p")){
-            return  getPOption(employeeMap, empnoList).stream().map(e -> e.getEmpInfo("SCH")).collect(Collectors.joining("\n"));
+            return  getPOption(empnoList).stream().map(e -> e.getEmpInfo("SCH")).collect(Collectors.joining("\n"));
         }
 
         return "SCH," + empnoList.size();
