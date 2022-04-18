@@ -12,11 +12,6 @@ public class EmployeeManager {
     CRUDManager modify = new Modify(employeeMap);
     CRUDManager delete = new Delete(employeeMap);
 
-
-    public EmployeeManager(ArrayList<Employee> employees) {
-        this.employees = employees;
-    }
-
     @Deprecated
     public Employee add(String args) {
         Add add = new Add(employees);
@@ -26,7 +21,7 @@ public class EmployeeManager {
     @Deprecated
     //이 함수는 delete.calc 함수로 대체 예정입니다.
     public String delete(String args) {
-        return delete.calc(employeeMap, args);
+        return "";
     }
 
     @Deprecated
@@ -36,8 +31,6 @@ public class EmployeeManager {
 
     @Deprecated
     public String modify(String args) {
-        MOD mod = new MOD(employees);
-        System.out.println(mod.Run(args));
-        return "";
+        return modify.calc(args);
     }
 }
