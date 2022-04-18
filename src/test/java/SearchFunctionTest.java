@@ -142,9 +142,139 @@ public class SearchFunctionTest {
         assertEquals(fourthCondi, iEmployeeManagerMock.search("SCH, , , ,certi,ADV"));
     }
 
+    @Test
+    void getPOption_함수_Test() {
+
+        Map<String, Employee> employeeMap = new HashMap<>();
+        employeeMap.put("02117175", new Employee("02117175"
+                , new Name("SBILHUT LDEXRI", "SBILHUT", "LDEXRI")
+                , "CL4"
+                , new Phone("010-2814-1699", "2814", "1699")
+                , new Birthday("19950704")
+                , "ADV"
+                , 2002117175));
+
+        employeeMap.put("88114052", new Employee("88114052"
+                , new Name("NQ LVARW", "NQ", "LVARW")
+                , "CL4"
+                , new Phone("010-4528-3059", "4528", "3059")
+                , new Birthday("19911021")
+                , "PRO"
+                , 1988114052));
+//        SCH,01122329,DN WD,CL4,010-7174-5680,20071117,PRO
+        employeeMap.put( "01122329", new Employee("01122329"
+                , new Name("DN WD", "DN", "WD")
+                , "CL4"
+                , new Phone("010-7174-5680", "7174", "5680")
+                , new Birthday("20071117")
+                , "PRO"
+                , 2001122329));
+//        SCH,03113260,HH LTUPF,CL2,010-5798-5383,19791018,PRO
+        employeeMap.put("03113260", new Employee("03113260"
+                , new Name("HH LTUPF", "HH", "LTUPF")
+                , "CL2"
+                , new Phone("010-5798-5383", "5798", "5383")
+                , new Birthday("19791018")
+                , "PRO"
+                , 2003113260));
+//        SCH,05101762,VCUHLE HMU,CL4,010-3988-9289,20030819,PRO
+        employeeMap.put("05101762", new Employee("05101762"
+                , new Name("VCUHLE HMU", "VCUHLE", "HMU")
+                , "CL4"
+                , new Phone("010-3988-9289", "3988", "9289")
+                , new Birthday("20030819")
+                , "PRO"
+                , 2005101762));
+//        SCH,08123556,WN XV,CL1,010-7986-5047,20100614,PRO
+        employeeMap.put("08123556", new Employee("08123556"
+                , new Name("WN XV", "WN", "XV")
+                , "CL1"
+                , new Phone("010-7986-5047", "7986", "5047")
+                , new Birthday("20100614")
+                , "PRO"
+                , 2008123556));
+
+        ArrayList<String> empnoList = new ArrayList<>();
+        empnoList.add("08123556");
+        empnoList.add("05101762");
+        empnoList.add("03113260");
+
+        ArrayList<Employee> EmployeeList = new ArrayList<>();
+        EmployeeList.add(new Employee("03113260"
+                , new Name("HH LTUPF", "HH", "LTUPF")
+                , "CL2"
+                , new Phone("010-5798-5383", "5798", "5383")
+                , new Birthday("19791018")
+                , "PRO"
+                , 2003113260));
+        EmployeeList.add(new Employee("05101762"
+                , new Name("VCUHLE HMU", "VCUHLE", "HMU")
+                , "CL4"
+                , new Phone("010-3988-9289", "3988", "9289")
+                , new Birthday("20030819")
+                , "PRO"
+                , 2005101762));
+        EmployeeList.add(new Employee("08123556"
+                , new Name("WN XV", "WN", "XV")
+                , "CL1"
+                , new Phone("010-7986-5047", "7986", "5047")
+                , new Birthday("20100614")
+                , "PRO"
+                , 2008123556));
+
+        CRUDManager search = new Search();
+        assertEquals(EmployeeList, search.getPOption(employeeMap, empnoList));
+
+        empnoList = new ArrayList<>();
+        empnoList.add("08123556");
+        empnoList.add("05101762");
+        empnoList.add("03113260");
+        empnoList.add("02117175");
+        empnoList.add("88114052");
+        empnoList.add("01122329");
+        EmployeeList = new ArrayList<>();
+        EmployeeList.add(new Employee("88114052"
+                , new Name("NQ LVARW", "NQ", "LVARW")
+                , "CL4"
+                , new Phone("010-4528-3059", "4528", "3059")
+                , new Birthday("19911021")
+                , "PRO"
+                , 1988114052));
+        EmployeeList.add(new Employee("01122329"
+                , new Name("DN WD", "DN", "WD")
+                , "CL4"
+                , new Phone("010-7174-5680", "7174", "5680")
+                , new Birthday("20071117")
+                , "PRO"
+                , 2001122329));
+        EmployeeList.add(new Employee("02117175"
+                , new Name("SBILHUT LDEXRI", "SBILHUT", "LDEXRI")
+                , "CL4"
+                , new Phone("010-2814-1699", "2814", "1699")
+                , new Birthday("19950704")
+                , "ADV"
+                , 2002117175));
+        EmployeeList.add(new Employee("03113260"
+                , new Name("HH LTUPF", "HH", "LTUPF")
+                , "CL2"
+                , new Phone("010-5798-5383", "5798", "5383")
+                , new Birthday("19791018")
+                , "PRO"
+                , 2003113260));
+        EmployeeList.add(new Employee("05101762"
+                , new Name("VCUHLE HMU", "VCUHLE", "HMU")
+                , "CL4"
+                , new Phone("010-3988-9289", "3988", "9289")
+                , new Birthday("20030819")
+                , "PRO"
+                , 2005101762));
+
+        assertEquals(EmployeeList, search.getPOption(employeeMap, empnoList));
+
+    }
 
     @Test
-    void getEmpnoList_함수_Test2() {
+    void getEmpnoList_함수_Test() {
 
         Map<String, Employee> employeeMap = new HashMap<>();
         employeeMap.put("02117175", new Employee("02117175"

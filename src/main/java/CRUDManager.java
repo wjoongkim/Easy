@@ -1,26 +1,25 @@
-import java.util.ArrayList;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class CRUDManager {
     abstract String calc(Map<String, Employee> employeeMap, String args);
 
+
+    ArrayList<Employee> getPOption(Map<String, Employee> employeeMap, ArrayList<String> empnoList){
+
+        Set<String> searchfilter = empnoList.stream().collect(Collectors.toCollection(HashSet::new));
+        ArrayList<Employee> result = new ArrayList<>();
+        result = employeeMap.entrySet().stream().filter(c -> searchfilter.contains(c.getKey())).sorted(new Comparator<Map.Entry<String, Employee>>() {
+            @Override
+            public int compare(Map.Entry<String, Employee> o1, Map.Entry<String, Employee> o2) {
+                return o1.getValue().getJoinYear() - o2.getValue().getJoinYear();
+            }
+        }).limit(5).map(map -> map.getValue()).collect(Collectors.toCollection(ArrayList::new));
+
+        return result;
+    }
+
     ArrayList<String> getEmpnoList(Map<String, Employee> employeeMap, String args){
-
-//SCH,-p,-d, ,birthday,04
-        //SCH, , , ,employeeNum,79110836\
-        //SCH,-p, , ,certi,PRO
-        //SCH, , , ,certi,ADV
-//        SCH,-p, , ,cl,CL4
-//        SCH, ,-m, ,birthday,09
-//        SCH,-p,-y, ,birthday,2003
-//        SCH,-p, , ,employeeNum,05101762
-//        SCH,-p,-m, ,phoneNum,3112
-//        SCH,-p,-l, ,phoneNum,4605
-//        SCH,-p, , ,employeeNum,10127115
-//        SCH, ,-f, ,name,LDEXRI
-//        SCH, , , ,name,FB NTAWR
-
         final int OPERATION = 0;
         final int OPTION1 = 1;
         final int OPTION2 = 2;
