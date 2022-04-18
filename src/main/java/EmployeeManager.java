@@ -18,9 +18,8 @@ public class EmployeeManager {
     }
 
     @Deprecated
-    public Employee add(String args) {
-        Add add = new Add(employees);
-        return add.Run(args);
+    public String add(String args) {
+        return add.calc(args);
     }
 
     @Deprecated
