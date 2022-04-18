@@ -1,9 +1,17 @@
 import java.util.ArrayList;
+import java.util.Map;
 
-public class ADD {
+public class Add extends CRUDManager {
+
+    @Override
+    String calc(Map<String, Employee> employeeMap, String args){
+
+        return null;
+    }
+
     ArrayList<Employee> employees;
 
-    public ADD(ArrayList<Employee> employees) {
+    public Add(ArrayList<Employee> employees) {
         this.employees = employees;
     }
 

@@ -1,31 +1,29 @@
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
-import java.text.ParseException;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
-public class EmployeeManager implements IEmployeeManager {
-    ArrayList<Employee> employees;
+public class EmployeeManager {
+    @Deprecated
+    ArrayList<Employee> employees = new ArrayList<>();
+
+    Map<String, Employee> employeeMap = new HashMap<>();
 
     public EmployeeManager(ArrayList<Employee> employees) {
         this.employees = employees;
     }
 
-    @Override
+    @Deprecated
     public Employee add(String args) {
-        ADD add = new ADD(employees);
+        Add add = new Add(employees);
         return add.Run(args);
     }
 
-    @Override
+    @Deprecated
     public void delete(String[] args) {
 
     }
 
-    @Override
+    @Deprecated
     public ArrayList<Employee> search(String args) {
 //SCH,-p,-d, ,birthday,04
         //SCH, , , ,employeeNum,79110836\
@@ -139,7 +137,7 @@ public class EmployeeManager implements IEmployeeManager {
         return result;
     }
 
-    @Override
+    @Deprecated
     public void modify(String args) {
         MOD mod = new MOD(employees);
         System.out.println(mod.Run(args));

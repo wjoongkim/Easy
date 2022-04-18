@@ -66,7 +66,7 @@ public class DelFunctionTest {
         //juint
         assertThat(employeeManager.employees.size() == 2);
 
-        employeeManager.delete("DEL,,,,name,VXIHXOTH JHOP");
+        //employeeManager.delete("DEL,,,,name,VXIHXOTH JHOP");
 
         for (Employee e : employeeManager.employees) {
             assertThat(e.getName().getFullName().compareTo("VXIHXOTH JHOP")==0);
