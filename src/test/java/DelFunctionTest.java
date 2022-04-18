@@ -44,8 +44,8 @@ public class DelFunctionTest {
         //when(employeeManager.add(testString1)).thenReturn(employeeMap.put(e1.getEmployeeNum(), e1));
         //when(employeeManager.add(testString2)).thenReturn(employeeMap.put(e2.getEmployeeNum(), e2));
 
-        employeeManager.add(testString1);
-        employeeManager.add(testString2);
+        employeeManager.add.calc(testString1);
+        employeeManager.add.calc(testString2);
         //employeeMap.put(e1.getEmployeeNum(), e1);
         //employeeMap.put(e1.getEmployeeNum(), e2);
 

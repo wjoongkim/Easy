@@ -4,15 +4,15 @@ import java.util.stream.Collectors;
 public abstract class CRUDManager {
     Map<String, Employee> employeeMap;
 
-    public CRUDManager(Map<String, Employee> employeeMap){
+    public CRUDManager(Map<String, Employee> employeeMap) {
         this.employeeMap = employeeMap;
     }
 
     abstract String calc(String args);
 
-    protected ArrayList<Employee> getPOption(ArrayList<String> empnoList){
+    protected ArrayList<Employee> getPOption(ArrayList<String> empNoList) {
 
-        Set<String> searchfilter = empnoList.stream().collect(Collectors.toCollection(HashSet::new));
+        Set<String> searchfilter = empNoList.stream().collect(Collectors.toCollection(HashSet::new));
         ArrayList<Employee> result = new ArrayList<>();
         result = employeeMap.entrySet().stream().filter(c -> searchfilter.contains(c.getKey())).sorted(new Comparator<Map.Entry<String, Employee>>() {
             @Override
@@ -24,7 +24,7 @@ public abstract class CRUDManager {
         return result;
     }
 
-    protected ArrayList<String> getEmpNoList(String args){
+    protected ArrayList<String> getEmpNoList(String args) {
         final int OPERATION = 0;
         final int OPTION1 = 1;
         final int OPTION2 = 2;
@@ -101,32 +101,32 @@ public abstract class CRUDManager {
         else {
             switch (condition) {
                 case "employeeNum":
-                    result = (ArrayList<String>)employeeMap.entrySet().stream()
+                    result = (ArrayList<String>) employeeMap.entrySet().stream()
                             .filter(employee -> employee.getValue().getEmployeeNum().contains(keyword))
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "name":
-                    result = (ArrayList<String>)employeeMap.entrySet().stream()
+                    result = (ArrayList<String>) employeeMap.entrySet().stream()
                             .filter(employee -> employee.getValue().getName().getFullName().contains(keyword))
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "cl":
-                    result = (ArrayList<String>)employeeMap.entrySet().stream()
+                    result = (ArrayList<String>) employeeMap.entrySet().stream()
                             .filter(employee -> employee.getValue().getCl().contains(keyword))
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "phoneNum":
-                    result = (ArrayList<String>)employeeMap.entrySet().stream()
+                    result = (ArrayList<String>) employeeMap.entrySet().stream()
                             .filter(employee -> employee.getValue().getPhoneNum().getFullNumber().contains(keyword))
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "birthday":
-                    result = (ArrayList<String>)employeeMap.entrySet().stream()
+                    result = (ArrayList<String>) employeeMap.entrySet().stream()
                             .filter(employee -> employee.getValue().getBirthday().getBirthday().contains(keyword))
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "certi":
-                    result = (ArrayList<String>)employeeMap.entrySet().stream()
+                    result = (ArrayList<String>) employeeMap.entrySet().stream()
                             .filter(employee -> employee.getValue().getCerti().contains(keyword))
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;

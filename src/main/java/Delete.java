@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 
 public class Delete extends CRUDManager {
 
-    public Delete(Map<String, Employee> employeeMap){
+    public Delete(Map<String, Employee> employeeMap) {
         super(employeeMap);
     }
 

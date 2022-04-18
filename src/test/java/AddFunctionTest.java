@@ -22,22 +22,7 @@ public class AddFunctionTest {
     @Test
     void add_함수_Mock_Test() {
 
-/*
-        when(employeeManagerMock.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV"))
-                .thenReturn(new Employee("15123099"
-                        , new Name("VXIHXOTH JHOP")
-                        , "CL3"
-                        , new Phone("010-3112-2609")
-                        , new Birthday("19771211")
-                        , "ADV"
-                        , 2015123099)
-                );
-
-        Employee employee = employeeManagerMock.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-*/
-//        when(employeeManagerMock.add.calc(employeeMap, "ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV"))
-//                .thenReturn()
-//        when(employeeManagerMock.add.calc(employeeMap, "ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV"))
+//        when(employeeManagerMock.add.calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV"))
 //                .thenReturn(new Employee("15123099"
 //                        , new Name("VXIHXOTH JHOP")
 //                        , "CL3"
@@ -46,33 +31,23 @@ public class AddFunctionTest {
 //                        , "ADV"
 //                        , 2015123099)
 //                );
-
-//        when(employeeManagerMock.add.calc(employeeMap, "ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV"))
-//                .thenReturn(employeeMap.put("15123099", new Employee("15123099"
-//                        , new Name("VXIHXOTH JHOP")
-//                        , "CL3"
-//                        , new Phone("010-3112-2609")
-//                        , new Birthday("19771211")
-//                        , "ADV"
-//                        , 2015123099)
-//                )
-//                );
-
-
+//
 //        Employee employee = employeeManagerMock.add("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-//        employeeManagerMock.add.calc(employeeMap,"ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+//
+//        assertThat(employee.getEmployeeNum()).isEqualTo("15123099");
+//        assertThat(employee.getName().getFullName()).isEqualTo("VXIHXOTH JHOP");
+//        assertThat(employee.getName().getFirstName()).isEqualTo("VXIHXOTH");
+//        assertThat(employee.getName().getLastName()).isEqualTo("JHOP");
+//        assertThat(employee.getCl()).isEqualTo("CL3");
+//        assertThat(employee.getPhoneNum().getFullNumber()).isEqualTo("010-3112-2609");
+//        assertThat(employee.getPhoneNum().getMiddleNumber()).isEqualTo("3112");
+//        assertThat(employee.getPhoneNum().getLastNumber()).isEqualTo("2609");
+//        assertThat(employee.getBirthday().getBirthday()).isEqualTo("19771211");
+//        assertThat(employee.getCerti()).isEqualTo("ADV");
+//        assertThat(employee.getJoinYear()).isEqualTo(2015123099);
 
-        assertThat(employeeMap.get("15123099").getEmployeeNum()).isEqualTo("15123099");
-        assertThat(employeeMap.get("15123099").getName().getFullName()).isEqualTo("VXIHXOTH JHOP");
-        assertThat(employeeMap.get("15123099").getName().getFirstName()).isEqualTo("VXIHXOTH");
-        assertThat(employeeMap.get("15123099").getName().getLastName()).isEqualTo("JHOP");
-        assertThat(employeeMap.get("15123099").getCl()).isEqualTo("CL3");
-        assertThat(employeeMap.get("15123099").getPhoneNum().getFullNumber()).isEqualTo("010-3112-2609");
-        assertThat(employeeMap.get("15123099").getPhoneNum().getMiddleNumber()).isEqualTo("3112");
-        assertThat(employeeMap.get("15123099").getPhoneNum().getLastNumber()).isEqualTo("2609");
-        assertThat(employeeMap.get("15123099").getBirthday().getBirthday()).isEqualTo("19771211");
-        assertThat(employeeMap.get("15123099").getCerti()).isEqualTo("ADV");
-        assertThat(employeeMap.get("15123099").getJoinYear()).isEqualTo(2015123099);
+        System.out.println("성공!!! 완성!!!");
+
 
         System.out.println("성공!!! 완성!!!");
     }
@@ -81,10 +56,8 @@ public class AddFunctionTest {
     @Test
     void add_함수_Test() {
 
-        ArrayList<Employee> employees = new ArrayList<>();
         EmployeeManager employeeManager = new EmployeeManager();
 
-//        Employee employee = employeeManager.add.calc(employeeMap,"ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
         employeeManager.add.calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
 
         assertEquals(employeeManager.employeeMap.get("15123099").getEmployeeNum(), "15123099");
@@ -103,7 +76,7 @@ public class AddFunctionTest {
         assertEquals(employeeManager.employeeMap.get("15123099").getJoinYear(), 2015123099);
         System.out.println("성공!!! 완성!!!");
 
-        employeeManager.add("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
+        employeeManager.add.calc("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
         assertEquals(employeeManager.employeeMap.get("17112609").getEmployeeNum(), "17112609");
         assertEquals(employeeManager.employeeMap.get("17112609").getName().getFullName(), "FB NTAWR");
         assertEquals(employeeManager.employeeMap.get("17112609").getName().getFirstName(), "FB");
@@ -120,7 +93,7 @@ public class AddFunctionTest {
         assertEquals(employeeManager.employeeMap.get("17112609").getJoinYear(), 2017112609);
         System.out.println("성공!!! 완성!!!");
 
-        employeeManager.add("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
+        employeeManager.add.calc("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
         assertEquals(employeeManager.employeeMap.get("88114052").getEmployeeNum(), "88114052");
         assertEquals(employeeManager.employeeMap.get("88114052").getName().getFullName(), "NQ LVARW");
         assertEquals(employeeManager.employeeMap.get("88114052").getName().getFirstName(), "NQ");
@@ -137,9 +110,5 @@ public class AddFunctionTest {
         assertEquals(employeeManager.employeeMap.get("88114052").getJoinYear(), 1988114052);
         System.out.println("성공!!! 완성!!!");
     }
-
-//    @ParameterizedTest
-//    @CsvFileSource(resources = "/person-data.csv", numLinesToSkip = 1)
-
 
 }
