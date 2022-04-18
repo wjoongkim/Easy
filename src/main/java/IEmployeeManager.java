@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+@Deprecated
 public interface IEmployeeManager {
     Employee add(String args);
     void delete(String[] args);
