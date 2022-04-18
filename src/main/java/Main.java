@@ -22,26 +22,26 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new FileReader(inputFileName));
         String inputLine;
-        while ((inputLine = br.readLine())!=null) {
+        while ((inputLine = br.readLine()) != null) {
 
             String[] tokens = inputLine.split(",");
 
             switch (tokens[0]) {
-                case "ADD" :
-                    employeeManager.add(inputLine);
+                case "ADD":
+                    employeeManager.add.calc(inputLine);
                     break;
-                case "SCH" :
-                    output.write(employeeManager.search(inputLine));
+                case "SCH":
+                    output.write(employeeManager.search.calc(inputLine));
                     output.newLine();
                     output.flush();
                     break;
-                case "MOD" :
-                    output.write(employeeManager.modify(inputLine));
+                case "MOD":
+                    output.write(employeeManager.modify.calc(inputLine));
                     output.newLine();
                     output.flush();
                     break;
-                case "DEL" :
-                    output.write(employeeManager.delete(inputLine));
+                case "DEL":
+                    output.write(employeeManager.delete.calc(inputLine));
                     output.newLine();
                     output.flush();
                     break;
