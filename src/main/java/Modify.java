@@ -3,8 +3,12 @@ import java.util.stream.Collectors;
 
 public class Modify extends CRUDManager {
 
+    public Modify(Map<String, Employee> employeeMap){
+        super(employeeMap);
+    }
+
     @Override
-    String calc(Map<String, Employee> employeeMap, String args) {
+    String calc(String args) {
         String result = "";
         String[] token = args.split(",");
 

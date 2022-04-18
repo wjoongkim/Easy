@@ -2,9 +2,15 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public abstract class CRUDManager {
-    abstract String calc(Map<String, Employee> employeeMap, String args);
+    Map<String, Employee> employeeMap;
 
-    protected ArrayList<Employee> getPOption(Map<String, Employee> employeeMap, ArrayList<String> empnoList){
+    public CRUDManager(Map<String, Employee> employeeMap){
+        this.employeeMap = employeeMap;
+    }
+
+    abstract String calc(String args);
+
+    protected ArrayList<Employee> getPOption(ArrayList<String> empnoList){
 
         Set<String> searchfilter = empnoList.stream().collect(Collectors.toCollection(HashSet::new));
         ArrayList<Employee> result = new ArrayList<>();
@@ -18,7 +24,7 @@ public abstract class CRUDManager {
         return result;
     }
 
-    protected ArrayList<String> getEmpNoList(Map<String, Employee> employeeMap, String args){
+    protected ArrayList<String> getEmpNoList(String args){
         final int OPERATION = 0;
         final int OPTION1 = 1;
         final int OPTION2 = 2;

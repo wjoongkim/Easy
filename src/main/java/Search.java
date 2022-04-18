@@ -4,8 +4,12 @@ import java.util.stream.Collectors;
 
 public class Search extends CRUDManager {
 
+    public Search(Map<String, Employee> employeeMap){
+        super(employeeMap);
+    }
+
     @Override
-    String calc(Map<String, Employee> employeeMap, String args){
+    String calc(String args){
         final int OPERATION = 0;
         final int OPTION1 = 1;
         final int OPTION2 = 2;

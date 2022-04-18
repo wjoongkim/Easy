@@ -7,10 +7,10 @@ public class EmployeeManager {
     ArrayList<Employee> employees = new ArrayList<>();
 
     Map<String, Employee> employeeMap = new HashMap<>();
-    CRUDManager search = new Search();
-    CRUDManager add = new Add();
-    CRUDManager modify = new Modify();
-    CRUDManager delete = new Delete();
+    CRUDManager search = new Search(employeeMap);
+    CRUDManager add = new Add(employeeMap);
+    CRUDManager modify = new Modify(employeeMap);
+    CRUDManager delete = new Delete(employeeMap);
 
 
     public EmployeeManager(ArrayList<Employee> employees) {
@@ -23,6 +23,8 @@ public class EmployeeManager {
         return add.Run(args);
     }
 
+    @Deprecated
+    //이 함수는 delete.calc 함수로 대체 예정입니다.
     public String delete(String args) {
         return delete.calc(employeeMap, args);
     }

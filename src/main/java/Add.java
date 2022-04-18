@@ -3,8 +3,12 @@ import java.util.Map;
 
 public class Add extends CRUDManager {
 
+    public Add(Map<String, Employee> employeeMap){
+        super(employeeMap);
+    }
+
     @Override
-    String calc(Map<String, Employee> employeeMap, String args) {
+    String calc(String args) {
         String[] tokens = args.split(",");
 
         final int EMPNO = 4;
@@ -29,11 +33,8 @@ public class Add extends CRUDManager {
         return null;
     }
 
+    //여기 아래 부분 다 삭제해도 될 것 같아요...
     ArrayList<Employee> employees;
-
-    public Add() {
-
-    }
 
     public Add(ArrayList<Employee> employees) {
         this.employees = employees;
