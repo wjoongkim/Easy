@@ -1,19 +1,27 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     static public void main(String[] args) throws IOException {
+        if (args.length != 2) {
+            System.out.println("Argument 수가 맞지 않습니다.");
+            return;
+        }
+
+        if (args[0].contains("/") || args[0].contains("\\") || args[1].contains("/") || args[1].contains("\\")) {
+            System.out.println("argument에 허용되지 않는 문자가 있습니다.");
+            return;
+        }
 
         String inputFileName = args[0];
         String outputFileName = args[1];
-        String inputLine;
+        BufferedWriter output = new BufferedWriter(new FileWriter(outputFileName));
 
         EmployeeManager employeeManager = new EmployeeManager(new ArrayList<Employee>());
 
         BufferedReader br = new BufferedReader(new FileReader(inputFileName));
+        String inputLine;
         while ((inputLine = br.readLine())!=null) {
 
             String[] tokens = inputLine.split(",");
@@ -23,22 +31,23 @@ public class Main {
                     employeeManager.add(inputLine);
                     break;
                 case "SCH" :
-                    employeeManager.search(inputLine);
+                    output.write(employeeManager.search(inputLine));
+                    output.newLine();
+                    output.flush();
                     break;
                 case "MOD" :
-                    employeeManager.modify(inputLine);
+                    output.write(employeeManager.modify(inputLine));
+                    output.newLine();
+                    output.flush();
                     break;
                 case "DEL" :
-                    employeeManager.delete(args); //임시 에러 방지를 위해 인자를 args로 변경
+                    output.write(employeeManager.delete(inputLine));
+                    output.newLine();
+                    output.flush();
                     break;
             }
         }
-
         br.close();
-
-//        System.out.println("Hello Easy Member");
-//        System.out.println("Go! Go! Team Project");
-//        System.out.println("드디어 ㅠㅠㅠ");
-//        System.out.println("Hello Code Review World!");
+        output.close();
     }
 }
