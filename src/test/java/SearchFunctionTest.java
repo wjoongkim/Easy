@@ -140,15 +140,11 @@ public class SearchFunctionTest {
 
 
         ArrayList<String> expectedVal2 = new ArrayList<>();
-        expectedVal2.add("03113260");
-        expectedVal2.add("08123556");
-        assertEquals(expectedVal2, search.getEmpNoList("SCH,-p,-m, ,phoneNum,79"));
+        expectedVal2.add("05101762");
+        assertEquals(expectedVal2, search.getEmpNoList("SCH,-p,-m, ,phoneNum,3988"));
         ArrayList<String> expectedVal3 = new ArrayList<>();
-        expectedVal3.add("05101762");
-        assertEquals(expectedVal3, search.getEmpNoList("SCH,-p,-l, ,phoneNum,92"));
-        ArrayList<String> expectedVal4 = new ArrayList<>();
-        expectedVal4.add("05101762");
-        assertEquals(expectedVal4, search.getEmpNoList("SCH,-p,-l, ,phoneNum,92"));
+        expectedVal3.add("01122329");
+        assertEquals(expectedVal3, search.getEmpNoList("SCH,-p,-l, ,phoneNum,5680"));
         ArrayList<String> expectedVal5 = new ArrayList<>();
         expectedVal5.add("08123556");
         assertEquals(expectedVal5, search.getEmpNoList("SCH,-p,-y, ,birthday,2010"));
@@ -159,22 +155,20 @@ public class SearchFunctionTest {
         expectedVal7.add("03113260");
         assertEquals(expectedVal7, search.getEmpNoList("SCH,-p,-d, ,birthday,18"));
         ArrayList<String> expectedVal8 = new ArrayList<>();
-        expectedVal8.add("01122329");
-        expectedVal8.add("08123556");
-        assertEquals(expectedVal8, search.getEmpNoList("SCH,-p, , ,employeeNum,12"));
+        expectedVal8.add("03113260");
+        assertEquals(expectedVal8, search.getEmpNoList("SCH,-p, , ,employeeNum,03113260"));
         ArrayList<String> expectedVal9 = new ArrayList<>();
         expectedVal9.add("03113260");
-        assertEquals(expectedVal9, search.getEmpNoList("SCH,-p, , ,name,HH"));
+        assertEquals(expectedVal9, search.getEmpNoList("SCH,-p, , ,name,HH LTUPF"));
         ArrayList<String> expectedVal10 = new ArrayList<>();
         expectedVal10.add("03113260");
         assertEquals(expectedVal10, search.getEmpNoList("SCH,-p, , ,cl,CL2"));
         ArrayList<String> expectedVal11 = new ArrayList<>();
-        expectedVal11.add("03113260");
-        expectedVal11.add("08123556");
-        assertEquals(expectedVal11, search.getEmpNoList("SCH,-p, , ,phoneNum,79"));
+        expectedVal11.add("02117175");
+        assertEquals(expectedVal11, search.getEmpNoList("SCH,-p, , ,phoneNum,010-2814-1699"));
         ArrayList<String> expectedVal12 = new ArrayList<>();
         expectedVal12.add("08123556");
-        assertEquals(expectedVal12, search.getEmpNoList("SCH,-p, , ,birthday,1006"));
+        assertEquals(expectedVal12, search.getEmpNoList("SCH,-p, , ,birthday,20100614"));
         ArrayList<String> expectedVal13 = new ArrayList<>();
         expectedVal13.add("02117175");
         assertEquals(expectedVal13, search.getEmpNoList("SCH,-p, , ,certi,ADV"));
