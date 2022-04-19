@@ -12,8 +12,10 @@ public class Main {
             return;
         }
 
-        String inputFileName = args[0];
-        String outputFileName = args[1];
+        String path = System.getProperty("user.dir");
+
+        String inputFileName = path + "\\" + args[0];
+        String outputFileName = path + "\\" + args[1];
         BufferedWriter output = new BufferedWriter(new FileWriter(outputFileName));
         BufferedReader input = new BufferedReader(new FileReader(inputFileName));
         EmployeeManager employeeManager = new EmployeeManager();
@@ -44,6 +46,7 @@ public class Main {
                     break;
             }
         }
+        System.out.println("작업을 정상적으로 완료 했습니다!!");
         input.close();
         output.close();
     }
