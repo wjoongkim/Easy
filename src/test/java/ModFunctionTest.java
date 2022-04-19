@@ -138,14 +138,14 @@ public class ModFunctionTest {
         ArrayList<Employee> list = new ArrayList<Employee>();
         EmployeeManager manager = new EmployeeManager();
 
-        manager.add.calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-        manager.add.calc("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
-        manager.add.calc("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
-        manager.add.calc("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
-        manager.add.calc("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
-        manager.add.calc("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
-        manager.add.calc("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
-        manager.add.calc("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
+        manager.getAdd().calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+        manager.getAdd().calc("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
+        manager.getAdd().calc("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
+        manager.getAdd().calc("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
+        manager.getAdd().calc("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
+        manager.getAdd().calc("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
+        manager.getAdd().calc("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
+        manager.getAdd().calc("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
 
 //        MOD mod = new MOD(list);
 //        System.out.println(mod.Run("MOD,-p, , ,certi,PRO,cl,CL3"));
@@ -168,14 +168,14 @@ public class ModFunctionTest {
         ArrayList<Employee> list = new ArrayList<Employee>();
         EmployeeManager manager = new EmployeeManager();
 
-        manager.add.calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-        manager.add.calc("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
-        manager.add.calc("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
-        manager.add.calc("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
-        manager.add.calc("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
-        manager.add.calc("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
-        manager.add.calc("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
-        manager.add.calc("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
+        manager.getAdd().calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+        manager.getAdd().calc("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
+        manager.getAdd().calc("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
+        manager.getAdd().calc("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
+        manager.getAdd().calc("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
+        manager.getAdd().calc("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
+        manager.getAdd().calc("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
+        manager.getAdd().calc("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
 
 //        MOD mod = new MOD(list);
 //        assertEquals(mod.Search("", "name", "NQ LVARW"), null, "옵션없음 테스트");
@@ -189,14 +189,14 @@ public class ModFunctionTest {
         ArrayList<Employee> list = new ArrayList<Employee>();
         EmployeeManager manager = new EmployeeManager();
 
-        manager.add.calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-        manager.add.calc("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
-        manager.add.calc("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
-        manager.add.calc("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
-        manager.add.calc("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
-        manager.add.calc("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
-        manager.add.calc("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
-        manager.add.calc("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
+        manager.getAdd().calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+        manager.getAdd().calc("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
+        manager.getAdd().calc("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
+        manager.getAdd().calc("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
+        manager.getAdd().calc("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
+        manager.getAdd().calc("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
+        manager.getAdd().calc("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
+        manager.getAdd().calc("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
 
 //        MOD mod = new MOD(list);
 //        assertEquals(mod.Search("", "phoneNum", "010-3091-9521"), null, "옵션없음 테스트");
@@ -210,14 +210,14 @@ public class ModFunctionTest {
         ArrayList<Employee> list = new ArrayList<Employee>();
         EmployeeManager manager = new EmployeeManager();
 
-        manager.add.calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
-        manager.add.calc("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
-        manager.add.calc("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
-        manager.add.calc("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
-        manager.add.calc("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
-        manager.add.calc("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
-        manager.add.calc("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
-        manager.add.calc("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
+        manager.getAdd().calc("ADD, , , ,15123099,VXIHXOTH JHOP,CL3,010-3112-2609,19771211,ADV");
+        manager.getAdd().calc("ADD, , , ,17112609,FB NTAWR,CL4,010-5645-6122,19861203,PRO");
+        manager.getAdd().calc("ADD, , , ,18115040,TTETHU HBO,CL3,010-4581-2050,20080718,ADV");
+        manager.getAdd().calc("ADD, , , ,88114052,NQ LVARW,CL4,010-4528-3059,19911021,PRO");
+        manager.getAdd().calc("ADD, , , ,19129568,SRERLALH HMEF,CL2,010-3091-9521,19640910,PRO");
+        manager.getAdd().calc("ADD, , , ,17111236,VSID TVO,CL1,010-3669-1077,20120718,PRO");
+        manager.getAdd().calc("ADD, , , ,18117906,TWU QSOLT,CL4,010-6672-7186,20030413,PRO");
+        manager.getAdd().calc("ADD, , , ,01122329,DN WD,CL4,010-7174-5680,20071117,PRO");
 
 //        MOD mod = new MOD(list);
 //        assertEquals(mod.Search("", "birthday", "20030413"), null, "옵션없음 테스트");
