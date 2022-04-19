@@ -8,8 +8,8 @@ public class Delete extends CRUDManager {
     }
 
     @Override
-    String calc(String args) {
-        String result;
+    public String calc(String args) {
+        String result = "";
         String[] token = args.split(",");
 
         if (token.length != 6) return null;
