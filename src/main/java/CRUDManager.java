@@ -38,98 +38,88 @@ public abstract class CRUDManager implements ICRUDManager {
 
         //option 2 처리
         if (!option2.equals("")) {
-            if (condition.equals("name")) {
-                switch (option2) {
-                    case "-f":
-                        result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getName().getFirstName().compareTo(keyword)==0)
-                                .map(Map.Entry::getKey).collect(Collectors.toList());
-                        break;
-                    case "-l":
-                        result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getName().getLastName().compareTo(keyword)==0)
-                                .map(Map.Entry::getKey).collect(Collectors.toList());
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (condition.equals("phoneNum")) {
-                switch (option2) {
-                    case "-m":
-                        result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getPhoneNum().getMiddleNumber().compareTo(keyword)==0)
-                                .map(Map.Entry::getKey).collect(Collectors.toList());
-                        break;
-                    case "-l":
-                        result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getPhoneNum().getLastNumber().compareTo(keyword)==0)
-                                .map(Map.Entry::getKey).collect(Collectors.toList());
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (condition.equals("birthday")) {
-                switch (option2) {
-                    case "-y":
-                        result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getBirthday().getYear().compareTo(keyword)==0)
-                                .map(Map.Entry::getKey).collect(Collectors.toList());
-                        break;
-                    case "-m":
-                        result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getBirthday().getMonth().compareTo(keyword)==0)
-                                .map(Map.Entry::getKey).collect(Collectors.toList());
-                        break;
-                    case "-d":
-                        result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getBirthday().getDay().compareTo(keyword)==0)
-                                .map(Map.Entry::getKey).collect(Collectors.toList());
-                        break;
-                    default:
-                        break;
-                }
-            }
+            if (condition.equals("name"))  return getOpt2Name(option2, keyword);
+            if (condition.equals("phoneNum")) return getOpt2PhoneNum(option2, keyword);
+            if (condition.equals("birthday")) return getOpt2Birthday(option2, keyword);
         }
         //option2가 없는 경우
-        else {
-            switch (condition) {
-                case "employeeNum":
-                    result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getEmployeeNum().compareTo(keyword)==0)
-                            .map(Map.Entry::getKey).collect(Collectors.toList());
-                    break;
-                case "name":
-                    result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getName().getFullName().compareTo(keyword)==0)
-                            .map(Map.Entry::getKey).collect(Collectors.toList());
-                    break;
-                case "cl":
-                    result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getCl().compareTo(keyword)==0)
-                            .map(Map.Entry::getKey).collect(Collectors.toList());
-                    break;
-                case "phoneNum":
-                    result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getPhoneNum().getFullNumber().compareTo(keyword)==0)
-                            .map(Map.Entry::getKey).collect(Collectors.toList());
-                    break;
-                case "birthday":
-                    result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getBirthday().getBirthday().compareTo(keyword)==0)
-                            .map(Map.Entry::getKey).collect(Collectors.toList());
-                    break;
-                case "certi":
-                    result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getCerti().compareTo(keyword)==0)
-                            .map(Map.Entry::getKey).collect(Collectors.toList());
-                    break;
-                default:
-                    break;
-            }
+        return getNoneOpt2(condition, keyword);
+    }
+
+    private ArrayList<String> getNoneOpt2(String condition, String keyword) {
+        switch (condition) {
+            case "employeeNum":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getEmployeeNum().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+            case "name":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getName().getFullName().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+            case "cl":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getCl().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+            case "phoneNum":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getPhoneNum().getFullNumber().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+            case "birthday":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getBirthday().getBirthday().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+            case "certi":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getCerti().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
         }
-        return result;
+        return new ArrayList<>();
+    }
+
+    private ArrayList<String> getOpt2Birthday(String option2, String keyword) {
+        switch (option2) {
+            case "-y":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getBirthday().getYear().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+            case "-m":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getBirthday().getMonth().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+            case "-d":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getBirthday().getDay().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+        }
+        return new ArrayList<>();
+    }
+
+    private ArrayList<String> getOpt2PhoneNum(String option2, String keyword) {
+        switch (option2) {
+            case "-m":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getPhoneNum().getMiddleNumber().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+            case "-l":
+                return  (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getPhoneNum().getLastNumber().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+        }
+        return new ArrayList<>();
+    }
+
+    private ArrayList<String> getOpt2Name(String option2, String keyword) {
+        switch (option2) {
+            case "-f":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getName().getFirstName().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+            case "-l":
+                return (ArrayList<String>) employeeMap.entrySet().stream()
+                        .filter(employee -> employee.getValue().getName().getLastName().compareTo(keyword)==0)
+                        .map(Map.Entry::getKey).collect(Collectors.toList());
+        }
+        return new ArrayList<>();
     }
 
 }
