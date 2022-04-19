@@ -1,5 +1,4 @@
 # 구조도 History
-![image](https://user-images.githubusercontent.com/19712454/163910902-2615c9b9-c388-443a-a75d-364e2f4db674.png)
 
 8차 Refactoring
 ![KakaoTalk_20220419_105648099](https://user-images.githubusercontent.com/103616692/163911791-f4a441c0-a5ba-467a-a064-8a3be1e7e8fb.png)
