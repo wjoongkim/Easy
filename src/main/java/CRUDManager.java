@@ -42,12 +42,12 @@ public abstract class CRUDManager implements ICRUDManager {
                 switch (option2) {
                     case "-f":
                         result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getName().getFirstName().contains(keyword))
+                                .filter(employee -> employee.getValue().getName().getFirstName().compareTo(keyword)==0)
                                 .map(Map.Entry::getKey).collect(Collectors.toList());
                         break;
                     case "-l":
                         result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getName().getLastName().contains(keyword))
+                                .filter(employee -> employee.getValue().getName().getLastName().compareTo(keyword)==0)
                                 .map(Map.Entry::getKey).collect(Collectors.toList());
                         break;
                     default:
@@ -58,12 +58,12 @@ public abstract class CRUDManager implements ICRUDManager {
                 switch (option2) {
                     case "-m":
                         result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getPhoneNum().getMiddleNumber().contains(keyword))
+                                .filter(employee -> employee.getValue().getPhoneNum().getMiddleNumber().compareTo(keyword)==0)
                                 .map(Map.Entry::getKey).collect(Collectors.toList());
                         break;
                     case "-l":
                         result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getPhoneNum().getLastNumber().contains(keyword))
+                                .filter(employee -> employee.getValue().getPhoneNum().getLastNumber().compareTo(keyword)==0)
                                 .map(Map.Entry::getKey).collect(Collectors.toList());
                         break;
                     default:
@@ -74,17 +74,17 @@ public abstract class CRUDManager implements ICRUDManager {
                 switch (option2) {
                     case "-y":
                         result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getBirthday().getYear().contains(keyword))
+                                .filter(employee -> employee.getValue().getBirthday().getYear().compareTo(keyword)==0)
                                 .map(Map.Entry::getKey).collect(Collectors.toList());
                         break;
                     case "-m":
                         result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getBirthday().getMonth().contains(keyword))
+                                .filter(employee -> employee.getValue().getBirthday().getMonth().compareTo(keyword)==0)
                                 .map(Map.Entry::getKey).collect(Collectors.toList());
                         break;
                     case "-d":
                         result = (ArrayList<String>) employeeMap.entrySet().stream()
-                                .filter(employee -> employee.getValue().getBirthday().getDay().contains(keyword))
+                                .filter(employee -> employee.getValue().getBirthday().getDay().compareTo(keyword)==0)
                                 .map(Map.Entry::getKey).collect(Collectors.toList());
                         break;
                     default:
@@ -97,32 +97,32 @@ public abstract class CRUDManager implements ICRUDManager {
             switch (condition) {
                 case "employeeNum":
                     result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getEmployeeNum().contains(keyword))
+                            .filter(employee -> employee.getValue().getEmployeeNum().compareTo(keyword)==0)
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "name":
                     result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getName().getFullName().contains(keyword))
+                            .filter(employee -> employee.getValue().getName().getFullName().compareTo(keyword)==0)
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "cl":
                     result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getCl().contains(keyword))
+                            .filter(employee -> employee.getValue().getCl().compareTo(keyword)==0)
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "phoneNum":
                     result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getPhoneNum().getFullNumber().contains(keyword))
+                            .filter(employee -> employee.getValue().getPhoneNum().getFullNumber().compareTo(keyword)==0)
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "birthday":
                     result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getBirthday().getBirthday().contains(keyword))
+                            .filter(employee -> employee.getValue().getBirthday().getBirthday().compareTo(keyword)==0)
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 case "certi":
                     result = (ArrayList<String>) employeeMap.entrySet().stream()
-                            .filter(employee -> employee.getValue().getCerti().contains(keyword))
+                            .filter(employee -> employee.getValue().getCerti().compareTo(keyword)==0)
                             .map(Map.Entry::getKey).collect(Collectors.toList());
                     break;
                 default:
