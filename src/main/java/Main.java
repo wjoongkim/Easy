@@ -27,20 +27,20 @@ public class Main {
 
             switch (tokens[0]) {
                 case "ADD":
-                    employeeManager.add.calc(inputLine);
+                    employeeManager.getAdd().calc(inputLine);
                     break;
                 case "SCH":
-                    output.write(employeeManager.search.calc(inputLine));
+                    output.write(employeeManager.getSearch().calc(inputLine));
                     output.newLine();
                     output.flush();
                     break;
                 case "MOD":
-                    output.write(employeeManager.modify.calc(inputLine));
+                    output.write(employeeManager.getModify().calc(inputLine));
                     output.newLine();
                     output.flush();
                     break;
                 case "DEL":
-                    output.write(employeeManager.delete.calc(inputLine));
+                    output.write(employeeManager.getDelete().calc(inputLine));
                     output.newLine();
                     output.flush();
                     break;

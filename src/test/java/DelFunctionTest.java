@@ -40,6 +40,7 @@ public class DelFunctionTest {
 
         String testString1 = "ADD1";
         String testString2 = "ADD2";
+
         //when(employeeManager.add(testString1)).thenReturn(employeeMap.put(e1.getEmployeeNum(), e1));
         //when(employeeManager.add(testString2)).thenReturn(employeeMap.put(e2.getEmployeeNum(), e2));
 
@@ -52,6 +53,7 @@ public class DelFunctionTest {
         for (Employee e : deleteManager.employeeMap.values()) {
             System.out.println(e.getName().getFullName());
         }
+
 
         //juint
         assertThat(deleteManager.employeeMap.size()).isEqualTo(2);
