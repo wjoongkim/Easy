@@ -13,7 +13,7 @@ public abstract class CRUDManager implements ICRUDManager {
     protected ArrayList<Employee> getPOption(ArrayList<String> empNoList) {
 
         Set<String> searchfilter = empNoList.stream().collect(Collectors.toCollection(HashSet::new));
-        ArrayList<Employee> result = new ArrayList<>();
+        ArrayList<Employee> result;
         result = employeeMap.entrySet().stream().filter(c -> searchfilter.contains(c.getKey())).sorted(new Comparator<Map.Entry<String, Employee>>() {
             @Override
             public int compare(Map.Entry<String, Employee> o1, Map.Entry<String, Employee> o2) {
@@ -25,17 +25,12 @@ public abstract class CRUDManager implements ICRUDManager {
     }
 
     protected ArrayList<String> getEmpNoList(String args) {
-        final int OPERATION = 0;
-        final int OPTION1 = 1;
         final int OPTION2 = 2;
-        final int OPTION3 = 3;
         final int CONDITION = 4;
         final int KEYWORD = 5;
 
         String[] tokens = args.split(",");
-        String option1 = tokens[OPTION1].trim();
         String option2 = tokens[OPTION2].trim();
-        String option3 = tokens[OPTION3].trim();
         String condition = tokens[CONDITION];
         String keyword = tokens[KEYWORD];
 

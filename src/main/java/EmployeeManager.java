@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class EmployeeManager {
-    private Map<String, Employee> employeeMap;
-    private CRUDManager search;
-    private CRUDManager add;
-    private CRUDManager modify;
-    private CRUDManager delete;
+    private final Map<String, Employee> employeeMap;
+    private final CRUDManager search;
+    private final CRUDManager add;
+    private final CRUDManager modify;
+    private final CRUDManager delete;
 
     public EmployeeManager(){
         employeeMap = new HashMap<>();
