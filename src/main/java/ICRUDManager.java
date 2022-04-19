@@ -1,3 +1,3 @@
 public interface ICRUDManager {
-    public String calc(String args);
+    String calc(String args);
 }
