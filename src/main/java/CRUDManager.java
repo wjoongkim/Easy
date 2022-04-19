@@ -1,14 +1,14 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
-public abstract class CRUDManager {
+public abstract class CRUDManager implements ICRUDManager {
     Map<String, Employee> employeeMap;
 
     public CRUDManager(Map<String, Employee> employeeMap) {
         this.employeeMap = employeeMap;
     }
 
-    abstract String calc(String args);
+    public abstract String calc(String args);
 
     protected ArrayList<Employee> getPOption(ArrayList<String> empNoList) {
 

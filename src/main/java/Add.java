@@ -7,7 +7,7 @@ public class Add extends CRUDManager {
     }
 
     @Override
-    String calc(String args) {
+    public String calc(String args) {
         String[] tokens = args.split(",");
 
         final int EMPNO = 4;

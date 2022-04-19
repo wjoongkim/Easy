@@ -9,7 +9,7 @@ public class Search extends CRUDManager {
     }
 
     @Override
-    String calc(String args) {
+    public String calc(String args) {
         final int OPERATION = 0;
         final int OPTION1 = 1;
         final int OPTION2 = 2;
